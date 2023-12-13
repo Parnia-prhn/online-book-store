@@ -25,7 +25,7 @@ function BookListPage() {
       <br />
       <ul className="space-y-5 justify-center">
         <li>
-          <ul className="space-x-12 flex ">
+          <ul className="space-x-12 flex p-5">
             <li>
               <img src="/book1.jpg" alt="book1" className="flex w-1/2" />
               <br />
@@ -61,7 +61,7 @@ function BookListPage() {
           </ul>
         </li>
         <li>
-          <ul className="space-x-12 flex justify-self-end">
+          <ul className="space-x-12 flex justify-self-end p-5">
             <li>
               <img src="/book1.jpg" alt="book1" className="flex w-1/2" />
               <br />

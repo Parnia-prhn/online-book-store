@@ -29,15 +29,16 @@ function AddBookPage() {
                 <li>
                   <TextField
                     label="book-name"
-                    variant="standard"
+                    variant="outlined"
                     size="small"
-                    className="bg-white flex rounded-full"
+                    className="bg-white flex "
                     sx={{ m: 1, width: 180 }}
                   />
                 </li>
                 <li>نام کتاب</li>
               </ul>
             </li>
+            <div>تصویر کتاب</div>
             <li className="justify-start text-left">
               <Button
                 className="text-yellow-500 bg-black rounded-md"
@@ -53,16 +54,15 @@ function AddBookPage() {
               >
                 آپلود
               </Button>
-              تصویر کتاب
             </li>
             <li>
               <ul className="space-x-5 flex justify-center text-center ">
                 <li>
                   <TextField
                     label="author"
-                    variant="standard"
+                    variant="outlined"
                     size="small"
-                    className="bg-white flex rounded-full"
+                    className="bg-white flex "
                     sx={{ m: 1, width: 180 }}
                   />
                 </li>
@@ -74,9 +74,9 @@ function AddBookPage() {
                 <li>
                   <TextField
                     label="genre"
-                    variant="standard"
+                    variant="outlined"
                     size="small"
-                    className="bg-white flex rounded-full"
+                    className="bg-white flex "
                     sx={{ m: 1, width: 180 }}
                   />
                 </li>
@@ -88,9 +88,9 @@ function AddBookPage() {
                 <li>
                   <TextField
                     label="publisher"
-                    variant="standard"
+                    variant="outlined"
                     size="small"
-                    className="bg-white flex rounded-full"
+                    className="bg-white flex "
                     sx={{ m: 1, width: 180 }}
                   />
                 </li>
@@ -102,9 +102,9 @@ function AddBookPage() {
                 <li>
                   <TextField
                     label="price"
-                    variant="standard"
+                    variant="outlined"
                     size="small"
-                    className="bg-white flex rounded-full"
+                    className="bg-white flex "
                     sx={{ m: 1, width: 180 }}
                   />
                 </li>
@@ -124,7 +124,7 @@ function AddBookPage() {
                   backgroundColor: "black",
                 }}
               >
-                ثبت نام
+                تایید
               </Button>
             </li>
           </ul>

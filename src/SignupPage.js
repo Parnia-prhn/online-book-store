@@ -21,9 +21,9 @@ function SignupPage() {
                 <li>
                   <TextField
                     label="username"
-                    variant="standard"
+                    variant="outlined"
                     size="small"
-                    className="bg-white flex rounded-full"
+                    className="bg-white flex "
                     sx={{ m: 1, width: 180 }}
                   />
                 </li>
@@ -35,9 +35,9 @@ function SignupPage() {
                 <li>
                   <TextField
                     label="password"
-                    variant="standard"
+                    variant="outlined"
                     size="small"
-                    className="bg-white flex rounded-full"
+                    className="bg-white flex "
                     sx={{ m: 1, width: 180 }}
                   />
                 </li>
@@ -49,9 +49,9 @@ function SignupPage() {
                 <li>
                   <TextField
                     label="age"
-                    variant="standard"
+                    variant="outlined"
                     size="small"
-                    className="bg-white flex rounded-full"
+                    className="bg-white flex "
                     sx={{ m: 1, width: 180 }}
                   />
                 </li>
@@ -63,9 +63,9 @@ function SignupPage() {
                 <li>
                   <TextField
                     label="gender"
-                    variant="standard"
+                    variant="outlined"
                     size="small"
-                    className="bg-white flex rounded-full"
+                    className="bg-white flex "
                     sx={{ m: 1, width: 180 }}
                   />
                 </li>
@@ -77,9 +77,9 @@ function SignupPage() {
                 <li>
                   <TextField
                     label="genre"
-                    variant="standard"
+                    variant="outlined"
                     size="small"
-                    className="bg-white flex rounded-full"
+                    className="bg-white flex "
                     sx={{ m: 1, width: 180 }}
                   />
                 </li>

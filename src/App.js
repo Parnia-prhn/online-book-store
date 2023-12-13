@@ -30,18 +30,18 @@ import SettingsIcon from "@mui/icons-material/Settings";
 function App() {
   return (
     <div className="App">
-      {/* <Header />
-      <HomePage />
-      <Footer /> */}
+      {/* <Header /> */}
+      {/* <HomePage /> */}
+      {/* <Footer /> */}
       {/* <LoginPage /> */}
       {/* <SignupPage /> */}
-      {/* <HeaderProfilePage />
-      <ProfilePage />
-      <Footer /> */}
+      {/* <HeaderProfilePage /> */}
+      {/* <ProfilePage /> */}
+      {/* <Footer /> */}
       {/* <AddBookPage /> */}
       <HeaderBookPage />
-      {/* <BookListPage/> */}
-      <BookPage/>
+      {/* <BookListPage /> */}
+      <BookPage />
     </div>
   );
 }

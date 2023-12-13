@@ -67,9 +67,9 @@ function Header() {
 
         <TextField
           label="جستجو کنید"
-          variant="standard"
+          variant="outlined"
           size="small"
-          className="bg-white flex rounded-full"
+          className="bg-white flex"
           sx={{ m: 1, width: 500 }}
         />
       </div>

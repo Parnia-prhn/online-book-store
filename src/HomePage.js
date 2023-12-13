@@ -8,10 +8,10 @@ function HomePage() {
       <br />
       <br />
       <br />
-      <div className="text-right text-black">پر فروشترین ها</div>
+      <div className="text-right text-black p-7">پر فروشترین ها</div>
       <br />
       <br />
-      <ul className="space-x-12 flex justify-end">
+      <ul className="space-x-12 flex justify-end p-5">
         <li>
           <img src="/book1.jpg" alt="book1" className="w-1/2" />
           <br />
@@ -45,8 +45,7 @@ function HomePage() {
         </li>
       </ul>
 
-      <br />
-      <div className="text-right text-black">ژانر ها</div>
+      <div className="text-right text-black p-7">ژانر ها</div>
       <br />
       <div className="bg-yellow-500 p-10 rounded ">
         <ul className="space-x-16 flex justify-center text-center">
@@ -86,9 +85,9 @@ function HomePage() {
       <br />
       <br />
       <br />
-      <div className="text-right text-black">پیشنهادی برای شما</div>
+      <div className="text-right text-black p-7">پیشنهادی برای شما</div>
       <br />
-      <ul className="space-x-12 flex justify-self-end">
+      <ul className="space-x-12 flex justify-self-end p-5">
         <li>
           <img src="/book1.jpg" alt="book1" className="flex w-1/2" />
           <br />
