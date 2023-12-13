@@ -5,6 +5,8 @@ import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import IconButton from "@mui/material/IconButton";
 import InputAdornment from "@mui/material/InputAdornment";
+import HeaderBookPage from "./HeaderBookPage.js";
+
 // Import some icons
 import SearchIcon from "@mui/icons-material/Search";
 import FavoriteIcon from "@mui/icons-material/Favorite";
@@ -21,6 +23,7 @@ import { MdDelete } from "react-icons/md";
 function BookListPage() {
   return (
     <div>
+      <HeaderBookPage />
       <br />
       <br />
       <ul className="space-y-5 justify-center">

@@ -78,28 +78,28 @@ function Header() {
         <ul className="flex space-x-12 text-center justify-center translate-y-1/4 ">
           <li
             link
-            to="book-list-page"
+            to="BookListPage"
             className="bg-black rounded-full w-40 h-40 flex items-center justify-center border-8 border-yellow-500 text-yellow-500 hover:text-white transform translate-y-1/2 "
           >
             پرفروشترین ها
           </li>
           <li
             link
-            to="book-list-page"
+            to="BookListPage"
             className="bg-black rounded-full w-40 h-40 flex items-center justify-center border-8 border-yellow-500 text-yellow-500 hover:text-white transform translate-y-1/2"
           >
             پر بازدید ترین ها
           </li>
           <li
             link
-            to="book-list-page"
+            to="BookListPage"
             className="bg-black rounded-full w-40 h-40 flex items-center justify-center border-8 border-yellow-500 text-yellow-500 hover:text-white transform translate-y-1/2"
           >
             پیشنهادی
           </li>
           <li
             link
-            to="book-list-page"
+            to="BookListPage"
             className="bg-black rounded-full w-40 h-40 flex items-center justify-center border-8 border-yellow-500 text-yellow-500 hover:text-white transform translate-y-1/2"
           >
             جدیدترین ها

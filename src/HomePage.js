@@ -1,9 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import Header from "./HeaderHomePage.js";
+import Footer from "./Footer.js";
+
+
 
 function HomePage() {
   return (
     <div className="home-page ">
+      <Header />
       <br />
       <br />
       <br />
@@ -121,6 +126,7 @@ function HomePage() {
         </li>
       </ul>
       <br />
+      <Footer />
     </div>
   );
 }

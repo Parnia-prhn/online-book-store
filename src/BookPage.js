@@ -5,6 +5,8 @@ import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import IconButton from "@mui/material/IconButton";
 import InputAdornment from "@mui/material/InputAdornment";
+import HeaderBookPage from "./HeaderBookPage.js";
+
 // Import some icons
 import CommentIcon from "@mui/icons-material/Comment";
 import SearchIcon from "@mui/icons-material/Search";
@@ -22,6 +24,7 @@ import { MdDelete } from "react-icons/md";
 function BookPage() {
   return (
     <div>
+      <HeaderBookPage />
       <br />
       <br />
       <br />

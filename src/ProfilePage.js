@@ -5,6 +5,9 @@ import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import IconButton from "@mui/material/IconButton";
 import InputAdornment from "@mui/material/InputAdornment";
+import HeaderProfilePage from "./HeaderProfilePage.js";
+import Footer from "./Footer.js";
+
 // Import some icons
 
 import { MdEdit } from "react-icons/md";
@@ -13,6 +16,7 @@ import { MdDelete } from "react-icons/md";
 function ProfilePage() {
   return (
     <div className="justify-center">
+      <HeaderProfilePage />
       <br />
       <br />
       <br />
@@ -168,6 +172,7 @@ function ProfilePage() {
 
       <br />
       <br />
+      <Footer />
     </div>
   );
 }

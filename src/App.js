@@ -31,7 +31,7 @@ function App() {
   return (
     <div className="App">
       {/* <Header /> */}
-      {/* <HomePage /> */}
+      <HomePage />
       {/* <Footer /> */}
       {/* <LoginPage /> */}
       {/* <SignupPage /> */}
@@ -39,9 +39,9 @@ function App() {
       {/* <ProfilePage /> */}
       {/* <Footer /> */}
       {/* <AddBookPage /> */}
-      <HeaderBookPage />
+      {/* <HeaderBookPage /> */}
       {/* <BookListPage /> */}
-      <BookPage />
+      {/* <BookPage /> */}
     </div>
   );
 }
