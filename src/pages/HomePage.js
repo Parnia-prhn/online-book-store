@@ -1,9 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Outlet, Link } from "react-router-dom";
-
-import Header from "./HeaderHomePage.js";
-import Footer from "./Footer.js";
+import book1 from "../assets/images/book1.jpg";
+import book2 from "../assets/images/book2.jpg";
+import book3 from "../assets/images/book3.jpg";
+import book4 from "../assets/images/book4.jpg";
+import Header from "./parts/HeaderHomePage.js";
+import Footer from "./parts/Footer.js";
 
 function HomePage() {
   return (
@@ -21,7 +24,7 @@ function HomePage() {
       <ul className="space-x-12 flex justify-end p-5">
         <Link to="/bookpage">
           <li>
-            <img src="/book1.jpg" alt="book1" className="w-1/2" />
+            <img src={book1} alt="book1" className="w-1/2" />
             <br />
             <div className="">نام کتاب</div>
             <br />
@@ -30,7 +33,7 @@ function HomePage() {
         </Link>
         <Link to="/bookpage">
           <li>
-            <img src="/book2.jpg" alt="book2" className="w-1/2" />
+            <img src={book2} alt="book2" className="w-1/2" />
             <br />
             <div className="">نام کتاب</div>
             <br />
@@ -39,7 +42,7 @@ function HomePage() {
         </Link>
         <Link to="/bookpage">
           <li>
-            <img src="/book3.jpg" alt="book3" className="w-1/2" />
+            <img src={book3} alt="book3" className="w-1/2" />
             <br />
             <div className="">نام کتاب</div>
             <br />
@@ -48,7 +51,7 @@ function HomePage() {
         </Link>
         <Link to="/bookpage">
           <li>
-            <img src="/book4.jpg" alt="book4" className="w-1/2" />
+            <img src={book4} alt="book4" className="w-1/2" />
             <br />
             <div className="">نام کتاب</div>
             <br />
@@ -110,7 +113,7 @@ function HomePage() {
       <ul className="space-x-12 flex justify-self-end p-5">
         <Link to="/bookpage">
           <li>
-            <img src="/book1.jpg" alt="book1" className="flex w-1/2" />
+            <img src={book1} alt="book1" className="flex w-1/2" />
             <br />
             <div className="">نام کتاب</div>
             <br />
@@ -119,7 +122,7 @@ function HomePage() {
         </Link>
         <Link to="/bookpage">
           <li>
-            <img src="/book2.jpg" alt="book2" className="flex w-1/2" />
+            <img src={book2} alt="book2" className="flex w-1/2" />
             <br />
             <div className="">نام کتاب</div>
             <br />
@@ -128,7 +131,7 @@ function HomePage() {
         </Link>
         <Link to="/bookpage">
           <li>
-            <img src="/book3.jpg" alt="book3" className="flex w-1/2" />
+            <img src={book3} alt="book3" className="flex w-1/2" />
             <br />
             <div className="">نام کتاب</div>
             <br />
@@ -137,7 +140,7 @@ function HomePage() {
         </Link>
         <Link to="/bookpage">
           <li>
-            <img src="/book4.jpg" alt="book4" className="flex w-1/2" />
+            <img src={book4} alt="book4" className="flex w-1/2" />
             <br />
             <div className="">نام کتاب</div>
             <br />

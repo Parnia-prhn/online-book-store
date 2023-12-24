@@ -6,7 +6,11 @@ import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import IconButton from "@mui/material/IconButton";
 import InputAdornment from "@mui/material/InputAdornment";
-import HeaderBookPage from "./HeaderBookPage.js";
+import HeaderBookPage from "./parts/HeaderBookPage.js";
+import book1 from "../assets/images/book1.jpg";
+import book2 from "../assets/images/book2.jpg";
+import book3 from "../assets/images/book3.jpg";
+import book4 from "../assets/images/book4.jpg";
 
 // Import some icons
 import CommentIcon from "@mui/icons-material/Comment";
@@ -37,7 +41,7 @@ function BookPage() {
           داستانی راجب حسرت ها
         </li>
         <li>
-          <img src="/book3.jpg" alt="book4" className="flex w-1/2 p-6" />
+          <img src={book3} alt="book4" className="flex w-1/2 p-6" />
         </li>
       </ul>
       <br />

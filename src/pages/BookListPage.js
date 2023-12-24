@@ -6,7 +6,11 @@ import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import IconButton from "@mui/material/IconButton";
 import InputAdornment from "@mui/material/InputAdornment";
-import HeaderBookPage from "./HeaderBookPage.js";
+import HeaderBookPage from "./parts/HeaderBookPage.js";
+import book1 from "../assets/images/book1.jpg";
+import book2 from "../assets/images/book2.jpg";
+import book3 from "../assets/images/book3.jpg";
+import book4 from "../assets/images/book4.jpg";
 
 // Import some icons
 import SearchIcon from "@mui/icons-material/Search";
@@ -32,7 +36,7 @@ function BookListPage() {
           <ul className="space-x-12 flex p-5">
             <Link to="/bookpage">
               <li>
-                <img src="/book1.jpg" alt="book1" className="flex w-1/2" />
+                <img src={book1} alt="book1" className="flex w-1/2" />
                 <br />
                 <div className="">نام کتاب</div>
                 <br />
@@ -41,7 +45,7 @@ function BookListPage() {
             </Link>
             <Link to="/bookpage">
               <li>
-                <img src="/book2.jpg" alt="book2" className="flex w-1/2" />
+                <img src={book2} alt="book2" className="flex w-1/2" />
                 <br />
                 <div className="">نام کتاب</div>
                 <br />
@@ -52,7 +56,7 @@ function BookListPage() {
             <br />
             <Link to="/bookpage">
               <li>
-                <img src="/book3.jpg" alt="book3" className="flex w-1/2" />
+                <img src={book3} alt="book3" className="flex w-1/2" />
                 <br />
                 <div className="">نام کتاب</div>
                 <br />
@@ -61,7 +65,7 @@ function BookListPage() {
             </Link>
             <Link to="/bookpage">
               <li>
-                <img src="/book4.jpg" alt="book4" className="flex w-1/2" />
+                <img src={book4} alt="book4" className="flex w-1/2" />
                 <br />
                 <div className="">نام کتاب</div>
                 <br />
@@ -74,7 +78,7 @@ function BookListPage() {
           <ul className="space-x-12 flex justify-self-end p-5">
             <Link to="/bookpage">
               <li>
-                <img src="/book1.jpg" alt="book1" className="flex w-1/2" />
+                <img src={book1} alt="book1" className="flex w-1/2" />
                 <br />
                 <div className="">نام کتاب</div>
                 <br />
@@ -83,7 +87,7 @@ function BookListPage() {
             </Link>
             <Link to="/bookpage">
               <li>
-                <img src="/book2.jpg" alt="book2" className="flex w-1/2" />
+                <img src={book2} alt="book2" className="flex w-1/2" />
                 <br />
                 <div className="">نام کتاب</div>
                 <br />
@@ -92,7 +96,7 @@ function BookListPage() {
             </Link>
             <Link to="/bookpage">
               <li>
-                <img src="/book3.jpg" alt="book3" className="flex w-1/2" />
+                <img src={book3} alt="book3" className="flex w-1/2" />
                 <br />
                 <div className="">نام کتاب</div>
                 <br />
@@ -101,7 +105,7 @@ function BookListPage() {
             </Link>
             <Link to="/bookpage">
               <li>
-                <img src="/book4.jpg" alt="book4" className="flex w-1/2" />
+                <img src={book4} alt="book4" className="flex w-1/2" />
                 <br />
                 <div className="">نام کتاب</div>
                 <br />
