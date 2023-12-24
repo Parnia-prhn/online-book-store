@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Outlet, Link } from "react-router-dom";
 
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
@@ -88,6 +89,8 @@ function SignupPage() {
             </li>
             <li className="justify-start text-left">
               <Button
+              component={Link}
+              to="/profilepage"
                 className="text-yellow-500 bg-black rounded-md"
                 aria-label="sign-up"
                 size="small"

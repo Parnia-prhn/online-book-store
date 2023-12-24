@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Outlet, Link } from "react-router-dom";
 //icons
 import { IoLogoInstagram } from "react-icons/io5";
 import { MdAlternateEmail } from "react-icons/md";
@@ -29,28 +30,34 @@ function Footer() {
           <li>
             <div className="flex justify-end">
               <ul className=" space-y-3">
-                <li>
-                  <IoLogoInstagram className="bg-black text-yellow-500 rounded-full " />
-                </li>
-
-                <li>
-                  <MdAlternateEmail className="bg-black text-yellow-500 rounded-full" />
-                </li>
-
-                <li>
-                  <LiaTelegram className="bg-black text-yellow-500 rounded-full" />
-                </li>
+                <Link to="https://instagram.com">
+                  <li>
+                    <IoLogoInstagram className="bg-black text-yellow-500 rounded-full " />
+                  </li>
+                </Link>
+                <Link to="https://gmail.com">
+                  <li>
+                    <MdAlternateEmail className="bg-black text-yellow-500 rounded-full" />
+                  </li>
+                </Link>
+                <Link to="https://telegram.com">
+                  <li>
+                    <LiaTelegram className="bg-black text-yellow-500 rounded-full" />
+                  </li>
+                </Link>
               </ul>
             </div>
           </li>
           <li>
             <div className="flex justify-center">توضیحات اصلی</div>
           </li>
-          <li>
-            <div className="flex justify-start">
-              <FaBookOpen className="text-8xl" />
-            </div>
-          </li>
+          <Link to="/">
+            <li>
+              <div className="flex justify-start">
+                <FaBookOpen className="text-8xl" />
+              </div>
+            </li>
+          </Link>
         </ul>
       </div>
     </footer>

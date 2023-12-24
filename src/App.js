@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Outlet, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./HeaderHomePage.js";
 import HomePage from "./HomePage.js";
 import Footer from "./Footer.js";
@@ -30,8 +32,17 @@ import SettingsIcon from "@mui/icons-material/Settings";
 function App() {
   return (
     <div className="App">
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/profilepage" element={<ProfilePage />} />
+        <Route path="/booklistpage" element={<BookListPage />} />
+        <Route path="/loginpage" element={<LoginPage />} />
+        <Route path="/addbookpage" element={<AddBookPage />} />
+        <Route path="/bookpage" element={<BookPage />} />
+        <Route path="/signuppage" element={<SignupPage />} />
+      </Routes>
       {/* <Header /> */}
-      <HomePage />
+      {/* <HomePage /> */}
       {/* <Footer /> */}
       {/* <LoginPage /> */}
       {/* <SignupPage /> */}

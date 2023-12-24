@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Outlet, Link } from "react-router-dom";
 
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
@@ -22,21 +23,25 @@ function HeaderBookPage() {
   return (
     <header className="bg-yellow-500 rounded-b-lg p-5  ">
       <div className=" px-4 py-2">
-        <IconButton
-          edge="start"
-          className="text-white bg-black rounded-full p-1"
-          aria-label="profile"
-        >
-          <AccountCircleIcon className="text-yellow-500 bg-black w-40 h-40 rounded-full" />
-        </IconButton>
-
-        <IconButton className="text-black " aria-label="favorite-list">
-          <FavoriteIcon className="text-yellow-500 bg-black w-40 h-40 rounded-full" />
-        </IconButton>
-
-        <IconButton className="text-black" aria-label="shopping-cart">
-          <ShoppingCartIcon className="text-yellow-500 bg-black w-40 h-40 rounded-full" />
-        </IconButton>
+        <Link to="/profilepage">
+          <IconButton
+            edge="start"
+            className="text-white bg-black rounded-full p-1"
+            aria-label="profile"
+          >
+            <AccountCircleIcon className="text-yellow-500 bg-black w-40 h-40 rounded-full" />
+          </IconButton>
+        </Link>
+        <Link to="/booklistpage">
+          <IconButton className="text-black " aria-label="favorite-list">
+            <FavoriteIcon className="text-yellow-500 bg-black w-40 h-40 rounded-full" />
+          </IconButton>
+        </Link>
+        <Link to="/booklistpage">
+          <IconButton className="text-black" aria-label="shopping-cart">
+            <ShoppingCartIcon className="text-yellow-500 bg-black w-40 h-40 rounded-full" />
+          </IconButton>
+        </Link>
       </div>
     </header>
   );

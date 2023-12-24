@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Outlet, Link } from "react-router-dom";
 
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
@@ -29,73 +30,84 @@ function BookListPage() {
       <ul className="space-y-5 justify-center">
         <li>
           <ul className="space-x-12 flex p-5">
-            <li>
-              <img src="/book1.jpg" alt="book1" className="flex w-1/2" />
-              <br />
-              <div className="">نام کتاب</div>
-              <br />
-              <div>قیمت کتاب</div>
-            </li>
-
-            <li>
-              <img src="/book2.jpg" alt="book2" className="flex w-1/2" />
-              <br />
-              <div className="">نام کتاب</div>
-              <br />
-              <div>قیمت کتاب</div>
-            </li>
+            <Link to="/bookpage">
+              <li>
+                <img src="/book1.jpg" alt="book1" className="flex w-1/2" />
+                <br />
+                <div className="">نام کتاب</div>
+                <br />
+                <div>قیمت کتاب</div>
+              </li>
+            </Link>
+            <Link to="/bookpage">
+              <li>
+                <img src="/book2.jpg" alt="book2" className="flex w-1/2" />
+                <br />
+                <div className="">نام کتاب</div>
+                <br />
+                <div>قیمت کتاب</div>
+              </li>
+            </Link>
             <br />
             <br />
-            <li>
-              <img src="/book3.jpg" alt="book3" className="flex w-1/2" />
-              <br />
-              <div className="">نام کتاب</div>
-              <br />
-              <div>قیمت کتاب</div>
-            </li>
-
-            <li>
-              <img src="/book4.jpg" alt="book4" className="flex w-1/2" />
-              <br />
-              <div className="">نام کتاب</div>
-              <br />
-              <div>قیمت کتاب</div>
-            </li>
+            <Link to="/bookpage">
+              <li>
+                <img src="/book3.jpg" alt="book3" className="flex w-1/2" />
+                <br />
+                <div className="">نام کتاب</div>
+                <br />
+                <div>قیمت کتاب</div>
+              </li>
+            </Link>
+            <Link to="/bookpage">
+              <li>
+                <img src="/book4.jpg" alt="book4" className="flex w-1/2" />
+                <br />
+                <div className="">نام کتاب</div>
+                <br />
+                <div>قیمت کتاب</div>
+              </li>
+            </Link>
           </ul>
         </li>
         <li>
           <ul className="space-x-12 flex justify-self-end p-5">
-            <li>
-              <img src="/book1.jpg" alt="book1" className="flex w-1/2" />
-              <br />
-              <div className="">نام کتاب</div>
-              <br />
-              <div>قیمت کتاب</div>
-            </li>
-
-            <li>
-              <img src="/book2.jpg" alt="book2" className="flex w-1/2" />
-              <br />
-              <div className="">نام کتاب</div>
-              <br />
-              <div>قیمت کتاب</div>
-            </li>
-
-            <li>
-              <img src="/book3.jpg" alt="book3" className="flex w-1/2" />
-              <br />
-              <div className="">نام کتاب</div>
-              <br />
-              <div>قیمت کتاب</div>
-            </li>
-
-            <li>
-              <img src="/book4.jpg" alt="book4" className="flex w-1/2" />
-              <br />
-              <div className="">نام کتاب</div>
-              <br />
-              <div>قیمت کتاب</div>
-            </li>
+            <Link to="/bookpage">
+              <li>
+                <img src="/book1.jpg" alt="book1" className="flex w-1/2" />
+                <br />
+                <div className="">نام کتاب</div>
+                <br />
+                <div>قیمت کتاب</div>
+              </li>
+            </Link>
+            <Link to="/bookpage">
+              <li>
+                <img src="/book2.jpg" alt="book2" className="flex w-1/2" />
+                <br />
+                <div className="">نام کتاب</div>
+                <br />
+                <div>قیمت کتاب</div>
+              </li>
+            </Link>
+            <Link to="/bookpage">
+              <li>
+                <img src="/book3.jpg" alt="book3" className="flex w-1/2" />
+                <br />
+                <div className="">نام کتاب</div>
+                <br />
+                <div>قیمت کتاب</div>
+              </li>
+            </Link>
+            <Link to="/bookpage">
+              <li>
+                <img src="/book4.jpg" alt="book4" className="flex w-1/2" />
+                <br />
+                <div className="">نام کتاب</div>
+                <br />
+                <div>قیمت کتاب</div>
+              </li>
+            </Link>
           </ul>
         </li>
       </ul>
