@@ -14,7 +14,7 @@ function HomePage() {
       <Header />
 
       <Link to="/booklistpage">
-        <div className="text-right text-black p-7 mt-8 mb-5">
+        <div className="text-right text-black p-7 mt-8 mb-5 font-yekan text-lg">
           پر فروشترین ها
         </div>
       </Link>
@@ -23,34 +23,36 @@ function HomePage() {
         <Link to="/bookpage">
           <li>
             <img src={book1} alt="book1" className="w-1/2 mb-3 " />
-            <div className="mb-3">نام کتاب</div>
-            <div>قیمت کتاب</div>
+            <div className="font-yekan text-base mb-3 ">نام کتاب</div>
+            <div className="font-yekan text-base">قیمت کتاب</div>
           </li>
         </Link>
         <Link to="/bookpage">
           <li>
             <img src={book2} alt="book2" className="w-1/2 mb-3" />
-            <div className="mb-3">نام کتاب</div>
-            <div>قیمت کتاب</div>
+            <div className="font-yekan text-base mb-3">نام کتاب</div>
+            <div className="font-yekan text-base">قیمت کتاب</div>
           </li>
         </Link>
         <Link to="/bookpage">
           <li>
             <img src={book3} alt="book3" className="w-1/2 mb-3" />
-            <div className="mb-3">نام کتاب</div>
-            <div>قیمت کتاب</div>
+            <div className="font-yekan text-base mb-3">نام کتاب</div>
+            <div className="font-yekan text-base">قیمت کتاب</div>
           </li>
         </Link>
         <Link to="/bookpage">
           <li>
             <img src={book4} alt="book4" className="w-1/2 mb-3" />
-            <div className="mb-3">نام کتاب</div>
-            <div>قیمت کتاب</div>
+            <div className="font-yekan text-base mb-3">نام کتاب</div>
+            <div className="font-yekan text-base">قیمت کتاب</div>
           </li>
         </Link>
       </ul>
       <Link to="/booklistpage">
-        <div className="text-right text-black p-7 mb-5">ژانر ها</div>
+        <div className="text-right text-black p-7 mb-5 font-yekan text-lg">
+          ژانر ها
+        </div>
       </Link>
       <div className="bg-yellow-500 p-10 rounded ">
         <ul className="space-x-16 flex justify-center text-center">
@@ -58,7 +60,7 @@ function HomePage() {
             <li
               link
               to="book-list-page"
-              className="bg-black p-7 rounded-full w-40 border-8 border-white text-yellow-500"
+              className="bg-black p-7 rounded-full w-40 border-8 border-white text-yellow-500 font-yekan text-lg"
             >
               زندگینامه
             </li>
@@ -67,7 +69,7 @@ function HomePage() {
             <li
               link
               to="book-list-page"
-              className="bg-black p-7 rounded-full w-40 border-8 border-white text-yellow-500"
+              className="bg-black p-7 rounded-full w-40 border-8 border-white text-yellow-500 font-yekan text-lg"
             >
               شعر
             </li>
@@ -76,7 +78,7 @@ function HomePage() {
             <li
               link
               to="book-list-page"
-              className="bg-black p-7 rounded-full w-40 border-8 border-white text-yellow-500"
+              className="bg-black p-7 rounded-full w-40 border-8 border-white text-yellow-500 font-yekan text-lg"
             >
               ادبیات جهان
             </li>
@@ -85,7 +87,7 @@ function HomePage() {
             <li
               link
               to="book-list-page"
-              className="bg-black p-7 rounded-full w-40 border-8 border-white text-yellow-500"
+              className="bg-black p-7 rounded-full w-40 border-8 border-white text-yellow-500 font-yekan text-lg"
             >
               ادبیات ایران
             </li>
@@ -93,7 +95,7 @@ function HomePage() {
         </ul>
       </div>
       <Link to="/booklistpage">
-        <div className="text-right text-black p-7 mt-7 mb-5">
+        <div className="text-right text-black p-7 mt-7 mb-5 font-yekan text-lg">
           پیشنهادی برای شما
         </div>
       </Link>
@@ -101,29 +103,29 @@ function HomePage() {
         <Link to="/bookpage">
           <li>
             <img src={book1} alt="book1" className="flex w-1/2 mb-3" />
-            <div className="mb-3">نام کتاب</div>
-            <div>قیمت کتاب</div>
+            <div className="font-yekan text-base mb-3">نام کتاب</div>
+            <div className="font-yekan text-base">قیمت کتاب</div>
           </li>
         </Link>
         <Link to="/bookpage">
           <li>
             <img src={book2} alt="book2" className="flex w-1/2 mb-3" />
-            <div className="mb-3">نام کتاب</div>
-            <div>قیمت کتاب</div>
+            <div className="font-yekan text-base mb-3">نام کتاب</div>
+            <div className="font-yekan text-base">قیمت کتاب</div>
           </li>
         </Link>
         <Link to="/bookpage">
           <li>
             <img src={book3} alt="book3" className="flex w-1/2 mb-3" />
-            <div className="mb-3">نام کتاب</div>
-            <div>قیمت کتاب</div>
+            <div className="font-yekan text-base mb-3">نام کتاب</div>
+            <div className="font-yekan text-base">قیمت کتاب</div>
           </li>
         </Link>
         <Link to="/bookpage">
           <li>
             <img src={book4} alt="book4" className="flex w-1/2 mb-3" />
-            <div className="mb-3">نام کتاب</div>
-            <div>قیمت کتاب</div>
+            <div className="font-yekan text-base mb-3">نام کتاب</div>
+            <div className="font-yekan text-base">قیمت کتاب</div>
           </li>
         </Link>
       </ul>

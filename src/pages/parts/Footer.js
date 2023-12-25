@@ -49,7 +49,7 @@ function Footer() {
             </div>
           </li>
           <li>
-            <div className="flex justify-center">توضیحات اصلی</div>
+            <div className="flex justify-center font-yekan text-lg">توضیحات اصلی</div>
           </li>
           <Link to="/">
             <li>

@@ -48,7 +48,7 @@ function Header() {
         <Button
           component={Link}
           to="/signuppage"
-          className="text-yellow-500 bg-black rounded-md"
+          className="text-yellow-500 bg-black rounded-md font-yekan"
           aria-label="sign-up"
           size="small"
           variant="contained"
@@ -79,15 +79,15 @@ function Header() {
           label="جستجو کنید"
           variant="outlined"
           size="small"
-          className="bg-white flex"
-          sx={{ m: 1, width: 500 }}
+          className="flex"
+          sx={{ m: 1, width: 500, backgroundColor: "white" }}
         />
       </div>
 
       <nav>
         <ul className="flex space-x-12 text-center justify-center translate-y-1/4 ">
           <Link to="/booklistpage">
-            <li className="bg-black rounded-full w-40 h-40 flex items-center justify-center border-8 border-yellow-500 text-yellow-500 hover:text-white transform translate-y-1/2 ">
+            <li className="bg-black rounded-full w-40 h-40 flex items-center justify-center border-8 border-yellow-500 text-yellow-500 hover:text-white transform translate-y-1/2 font-yekan text-lg">
               پرفروشترین ها
             </li>
           </Link>
@@ -95,7 +95,7 @@ function Header() {
             <li
               link
               to="BookListPage"
-              className="bg-black rounded-full w-40 h-40 flex items-center justify-center border-8 border-yellow-500 text-yellow-500 hover:text-white transform translate-y-1/2"
+              className="bg-black rounded-full w-40 h-40 flex items-center justify-center border-8 border-yellow-500 text-yellow-500 hover:text-white transform translate-y-1/2 font-yekan text-lg"
             >
               پر بازدید ترین ها
             </li>
@@ -104,7 +104,7 @@ function Header() {
             <li
               link
               to="BookListPage"
-              className="bg-black rounded-full w-40 h-40 flex items-center justify-center border-8 border-yellow-500 text-yellow-500 hover:text-white transform translate-y-1/2"
+              className="bg-black rounded-full w-40 h-40 flex items-center justify-center border-8 border-yellow-500 text-yellow-500 hover:text-white transform translate-y-1/2 font-yekan text-lg"
             >
               پیشنهادی
             </li>
@@ -113,7 +113,7 @@ function Header() {
             <li
               link
               to="BookListPage"
-              className="bg-black rounded-full w-40 h-40 flex items-center justify-center border-8 border-yellow-500 text-yellow-500 hover:text-white transform translate-y-1/2"
+              className="bg-black rounded-full w-40 h-40 flex items-center justify-center border-8 border-yellow-500 text-yellow-500 hover:text-white transform translate-y-1/2 font-yekan text-lg"
             >
               جدیدترین ها
             </li>

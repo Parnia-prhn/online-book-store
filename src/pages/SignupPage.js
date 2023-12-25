@@ -24,11 +24,11 @@ function SignupPage() {
                     label="username"
                     variant="outlined"
                     size="small"
-                    className="bg-white flex "
-                    sx={{ m: 1, width: 180 }}
+                    className=" flex "
+                    sx={{ m: 1, width: 180, backgroundColor: "white" }}
                   />
                 </li>
-                <li>نام کاربری</li>
+                <li className="font-yekan text-lg">نام کاربری</li>
               </ul>
             </li>
             <li>
@@ -38,11 +38,11 @@ function SignupPage() {
                     label="password"
                     variant="outlined"
                     size="small"
-                    className="bg-white flex "
-                    sx={{ m: 1, width: 180 }}
+                    className=" flex "
+                    sx={{ m: 1, width: 180, backgroundColor: "white" }}
                   />
                 </li>
-                <li>رمز عبور</li>
+                <li className="font-yekan text-lg">رمز عبور</li>
               </ul>
             </li>
             <li>
@@ -52,11 +52,11 @@ function SignupPage() {
                     label="age"
                     variant="outlined"
                     size="small"
-                    className="bg-white flex "
-                    sx={{ m: 1, width: 180 }}
+                    className=" flex "
+                    sx={{ m: 1, width: 180, backgroundColor: "white" }}
                   />
                 </li>
-                <li>سن</li>
+                <li className="font-yekan text-lg">سن</li>
               </ul>
             </li>
             <li>
@@ -66,11 +66,11 @@ function SignupPage() {
                     label="gender"
                     variant="outlined"
                     size="small"
-                    className="bg-white flex "
-                    sx={{ m: 1, width: 180 }}
+                    className=" flex "
+                    sx={{ m: 1, width: 180, backgroundColor: "white" }}
                   />
                 </li>
-                <li>جنسیت</li>
+                <li className="font-yekan text-lg">جنسیت</li>
               </ul>
             </li>
             <li>
@@ -80,17 +80,17 @@ function SignupPage() {
                     label="genre"
                     variant="outlined"
                     size="small"
-                    className="bg-white flex "
-                    sx={{ m: 1, width: 180 }}
+                    className=" flex "
+                    sx={{ m: 1, width: 180, backgroundColor: "white" }}
                   />
                 </li>
-                <li>ژانر مورد علاقه</li>
+                <li className="font-yekan text-lg">ژانر مورد علاقه</li>
               </ul>
             </li>
             <li className="justify-start text-left">
               <Button
-              component={Link}
-              to="/profilepage"
+                component={Link}
+                to="/profilepage"
                 className="text-yellow-500 bg-black rounded-md"
                 aria-label="sign-up"
                 size="small"

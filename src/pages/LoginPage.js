@@ -64,8 +64,8 @@ function LoginPage() {
                       label="username"
                       variant="outlined"
                       size="small"
-                      className="bg-white flex "
-                      sx={{ m: 1, width: 180 }}
+                      className="flex "
+                      sx={{ m: 1, width: 180, backgroundColor: "white" }}
                       InputProps={{
                         style: {
                           borderRadius: "8px",
@@ -73,7 +73,7 @@ function LoginPage() {
                       }}
                     />
                   </li>
-                  <li>نام کاربری</li>
+                  <li className="font-yekan text-lg">نام کاربری</li>
                 </ul>
               </li>
               <li>
@@ -91,11 +91,11 @@ function LoginPage() {
                       label="password"
                       variant="outlined"
                       size="small"
-                      className="bg-white flex "
-                      sx={{ m: 1, width: 180 }}
+                      className="flex "
+                      sx={{ m: 1, width: 180, backgroundColor: "white" }}
                     />
                   </li>
-                  <li>رمز عبور</li>
+                  <li className="font-yekan text-lg">رمز عبور</li>
                 </ul>
               </li>
               <li className="justify-center text-center">

@@ -1,0 +1,7 @@
+/* fonts.css */
+
+@font-face {
+  font-family: "Yekan";
+  src: url("../assets/fonts/BYekan+.ttf") format("truetype"),
+    url("../assets/fonts/danstevis.otf") format("opentype");
+}

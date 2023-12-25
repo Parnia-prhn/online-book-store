@@ -32,8 +32,8 @@ function BookPage() {
       <HeaderBookPage />
 
       <ul className="space-x-8 flex justify-end mt-7 mb-7">
-        <li className="p-10">
-          <div className="mb-7">
+        <li className="p-10 font-yekan text-lg">
+          <div className="mb-7 font-yekan text-lg">
             <b>کتابخانه نیمه شب</b>
           </div>
           داستانی راجب حسرت ها
@@ -77,7 +77,7 @@ function BookPage() {
             label="نظر خود را بنویسید"
             variant="outlined"
             size="small"
-            sx={{ m: 1, width: 700 }}
+            sx={{ m: 1, width: 700, backgroundColor: "white" }}
           />
         </li>
         <li>

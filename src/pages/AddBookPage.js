@@ -32,11 +32,11 @@ function AddBookPage() {
                     label="book-name"
                     variant="outlined"
                     size="small"
-                    className="bg-white flex "
-                    sx={{ m: 1, width: 180 }}
+                    className="flex "
+                    sx={{ m: 1, width: 180, backgroundColor: "white" }}
                   />
                 </li>
-                <li>نام کتاب</li>
+                <li className="font-yekan text-lg">نام کتاب</li>
               </ul>
             </li>
 
@@ -47,11 +47,11 @@ function AddBookPage() {
                     label="author"
                     variant="outlined"
                     size="small"
-                    className="bg-white flex "
-                    sx={{ m: 1, width: 180 }}
+                    className="bg-white flex"
+                    sx={{ m: 1, width: 180, backgroundColor: "white" }}
                   />
                 </li>
-                <li>نویسنده</li>
+                <li className="font-yekan text-lg">نویسنده</li>
               </ul>
             </li>
             <li>
@@ -61,11 +61,11 @@ function AddBookPage() {
                     label="genre"
                     variant="outlined"
                     size="small"
-                    className="bg-white flex "
-                    sx={{ m: 1, width: 180 }}
+                    className="bg-white flex"
+                    sx={{ m: 1, width: 180, backgroundColor: "white" }}
                   />
                 </li>
-                <li>ژانر</li>
+                <li className="font-yekan text-lg">ژانر</li>
               </ul>
             </li>
             <li>
@@ -75,11 +75,11 @@ function AddBookPage() {
                     label="publisher"
                     variant="outlined"
                     size="small"
-                    className="bg-white flex "
-                    sx={{ m: 1, width: 180 }}
+                    className="bg-white flex"
+                    sx={{ m: 1, width: 180, backgroundColor: "white" }}
                   />
                 </li>
-                <li>ناشر</li>
+                <li className="font-yekan text-lg">ناشر</li>
               </ul>
             </li>
             <li>
@@ -89,11 +89,11 @@ function AddBookPage() {
                     label="price"
                     variant="outlined"
                     size="small"
-                    className="bg-white flex "
-                    sx={{ m: 1, width: 180 }}
+                    className="bg-white flex"
+                    sx={{ m: 1, width: 180, backgroundColor: "white" }}
                   />
                 </li>
-                <li>قیمت</li>
+                <li className="font-yekan text-lg">قیمت</li>
               </ul>
             </li>
             <li className="justify-start text-left">
