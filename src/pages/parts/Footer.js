@@ -32,17 +32,17 @@ function Footer() {
               <ul className=" space-y-3">
                 <Link to="https://instagram.com">
                   <li>
-                    <IoLogoInstagram className="bg-black text-yellow-500 rounded-full " />
+                    <IoLogoInstagram className="bg-black text-yellow-500 rounded-full m-7" />
                   </li>
                 </Link>
                 <Link to="https://gmail.com">
                   <li>
-                    <MdAlternateEmail className="bg-black text-yellow-500 rounded-full" />
+                    <MdAlternateEmail className="bg-black text-yellow-500 rounded-full m-7" />
                   </li>
                 </Link>
                 <Link to="https://telegram.com">
                   <li>
-                    <LiaTelegram className="bg-black text-yellow-500 rounded-full" />
+                    <LiaTelegram className="bg-black text-yellow-500 rounded-full m-7" />
                   </li>
                 </Link>
               </ul>

@@ -29,46 +29,36 @@ function BookListPage() {
   return (
     <div>
       <HeaderBookPage />
-      <br />
-      <br />
-      <ul className="space-y-5 justify-center">
+
+      <ul className="space-y-5 justify-center mt-7 mb-5">
         <li>
           <ul className="space-x-12 flex p-5">
             <Link to="/bookpage">
               <li>
-                <img src={book1} alt="book1" className="flex w-1/2" />
-                <br />
-                <div className="">نام کتاب</div>
-                <br />
+                <img src={book1} alt="book1" className="flex w-1/2 mb-3" />
+                <div className="mb-3">نام کتاب</div>
                 <div>قیمت کتاب</div>
               </li>
             </Link>
             <Link to="/bookpage">
               <li>
-                <img src={book2} alt="book2" className="flex w-1/2" />
-                <br />
-                <div className="">نام کتاب</div>
-                <br />
+                <img src={book2} alt="book2" className="flex w-1/2 mb-3" />
+                <div className="mb-3">نام کتاب</div>
                 <div>قیمت کتاب</div>
               </li>
             </Link>
-            <br />
-            <br />
+
             <Link to="/bookpage">
               <li>
-                <img src={book3} alt="book3" className="flex w-1/2" />
-                <br />
-                <div className="">نام کتاب</div>
-                <br />
+                <img src={book3} alt="book3" className="flex w-1/2 mb-3" />
+                <div className="mb-3">نام کتاب</div>
                 <div>قیمت کتاب</div>
               </li>
             </Link>
             <Link to="/bookpage">
               <li>
-                <img src={book4} alt="book4" className="flex w-1/2" />
-                <br />
-                <div className="">نام کتاب</div>
-                <br />
+                <img src={book4} alt="book4" className="flex w-1/2 mb-3" />
+                <div className="mb-3">نام کتاب</div>
                 <div>قیمت کتاب</div>
               </li>
             </Link>
@@ -78,37 +68,29 @@ function BookListPage() {
           <ul className="space-x-12 flex justify-self-end p-5">
             <Link to="/bookpage">
               <li>
-                <img src={book1} alt="book1" className="flex w-1/2" />
-                <br />
-                <div className="">نام کتاب</div>
-                <br />
+                <img src={book1} alt="book1" className="flex w-1/2 mb-3" />
+                <div className="mb-3">نام کتاب</div>
                 <div>قیمت کتاب</div>
               </li>
             </Link>
             <Link to="/bookpage">
               <li>
-                <img src={book2} alt="book2" className="flex w-1/2" />
-                <br />
-                <div className="">نام کتاب</div>
-                <br />
+                <img src={book2} alt="book2" className="flex w-1/2 mb-3" />
+                <div className="mb-3">نام کتاب</div>
                 <div>قیمت کتاب</div>
               </li>
             </Link>
             <Link to="/bookpage">
               <li>
-                <img src={book3} alt="book3" className="flex w-1/2" />
-                <br />
-                <div className="">نام کتاب</div>
-                <br />
+                <img src={book3} alt="book3" className="flex w-1/2 mb-3" />
+                <div className="mb-3">نام کتاب</div>
                 <div>قیمت کتاب</div>
               </li>
             </Link>
             <Link to="/bookpage">
               <li>
-                <img src={book4} alt="book4" className="flex w-1/2" />
-                <br />
-                <div className="">نام کتاب</div>
-                <br />
+                <img src={book4} alt="book4" className="flex w-1/2 mb-3" />
+                <div className="mb-3">نام کتاب</div>
                 <div>قیمت کتاب</div>
               </li>
             </Link>

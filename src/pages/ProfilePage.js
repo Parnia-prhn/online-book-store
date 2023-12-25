@@ -22,187 +22,150 @@ function ProfilePage() {
   return (
     <div className="justify-center">
       <HeaderProfilePage />
-      <br />
-      <br />
-      <br />
-      <div className="flex justify-center p-5">نام و توضیحات کاربر</div>
-      <br />
-      <br />
+
+      <div className="flex justify-center p-5 mt-14 mb-5">
+        نام و توضیحات کاربر
+      </div>
 
       <div className="text-right text-black p-7">کتاب های خریداری شده</div>
-      <ul className="space-x-12 flex justify-self-end">
+      <ul className="space-x-12 flex justify-self-end ml-5">
         <Link to="/bookpage">
           <li>
-            <img src={book1} alt="book1" className="flex w-1/2" />
-
-            <br />
-            <div className="">نام کتاب</div>
-            <br />
+            <img src={book1} alt="book1" className="flex w-1/2 mb-3" />
+            <div className="mb-3">نام کتاب</div>
             <div>قیمت کتاب</div>
           </li>
         </Link>
         <Link to="/bookpage">
           <li>
-            <img src={book2} alt="book2" className="flex w-1/2" />
-
-            <br />
-            <div className="">نام کتاب</div>
-            <br />
+            <img src={book2} alt="book2" className="flex w-1/2 mb-3" />
+            <div className="mb-3">نام کتاب</div>
             <div>قیمت کتاب</div>
           </li>
         </Link>
         <Link to="/bookpage">
           <li>
-            <img src={book3} alt="book3" className="flex w-1/2" />
-
-            <br />
-            <div className="">نام کتاب</div>
-            <br />
+            <img src={book3} alt="book3" className="flex w-1/2 mb-3" />
+            <div className="mb-3">نام کتاب</div>
             <div>قیمت کتاب</div>
           </li>
         </Link>
         <Link to="/bookpage">
           <li>
-            <img src={book4} alt="book4" className="flex w-1/2" />
-
-            <br />
-            <div className="">نام کتاب</div>
-            <br />
+            <img src={book4} alt="book4" className="flex w-1/2 mb-3" />
+            <div className="mb-3">نام کتاب</div>
             <div>قیمت کتاب</div>
           </li>
         </Link>
       </ul>
 
       <div className="text-right text-black p-7">کتاب های پسندیده شده</div>
-      <ul className="space-x-12 flex justify-self-end">
+      <ul className="space-x-12 flex justify-self-end ml-5">
         <Link to="/bookpage">
           <li>
-            <img src={book1} alt="book1" className="flex w-1/2" />
-
-            <br />
-            <div className="">نام کتاب</div>
-            <br />
+            <img src={book1} alt="book1" className="flex w-1/2 mb-3" />
+            <div className="mb-3">نام کتاب</div>
             <div>قیمت کتاب</div>
           </li>
         </Link>
         <Link to="/bookpage">
           <li>
-            <img src={book2} alt="book2" className="flex w-1/2" />
-
-            <br />
-            <div className="">نام کتاب</div>
-            <br />
+            <img src={book2} alt="book2" className="flex w-1/2 mb-3" />
+            <div className="mb-3">نام کتاب</div>
             <div>قیمت کتاب</div>
           </li>
         </Link>
         <Link to="/bookpage">
           <li>
-            <img src={book3} alt="book3" className="flex w-1/2" />
-
-            <br />
-            <div className="">نام کتاب</div>
-            <br />
+            <img src={book3} alt="book3" className="flex w-1/2 mb-3" />
+            <div className="mb-3">نام کتاب</div>
             <div>قیمت کتاب</div>
           </li>
         </Link>
         <Link to="/bookpage">
           <li>
-            <img src={book4} alt="book4" className="flex w-1/2" />
-
-            <br />
-            <div className="">نام کتاب</div>
-            <br />
+            <img src={book4} alt="book4" className="flex w-1/2 mb-3" />
+            <div className="mb-3">نام کتاب</div>
             <div>قیمت کتاب</div>
           </li>
         </Link>
       </ul>
 
       <div className="text-right text-black p-7">کتاب های من</div>
-      <ul className="space-x-12 flex justify-self-end">
+      <ul className="space-x-12 flex justify-self-end ml-5 mb-7">
         <li>
           <Link to="/bookpage">
-            <img src={book1} alt="book1" className="flex w-1/2" />
+            <img src={book1} alt="book1" className="flex w-1/2 mb-1" />
           </Link>
-          <ul className="space-x-0 flex flex-row">
+          <ul className="space-x-0 flex flex-row mb-3">
             <Link to="/addbookpage">
               <li>
-                <MdEdit className="bg-black text-yellow-500 rounded-full" />
+                <MdEdit className="bg-black text-yellow-500 rounded-full mr-2 " />
               </li>
             </Link>
             <li>
               <MdDelete className="bg-black text-yellow-500 rounded-full" />
             </li>
           </ul>
-
-          <br />
-          <div className="">نام کتاب</div>
-          <br />
+          <div className="mb-3">نام کتاب</div>
           <div>قیمت کتاب</div>
         </li>
 
         <li>
           <Link to="/bookpage">
-            <img src={book2} alt="book2" className="flex w-1/2" />
+            <img src={book2} alt="book2" className="flex w-1/2 mb-1" />
           </Link>
-          <ul className="space-x-0 flex flex-row">
+          <ul className="space-x-0 flex flex-row mb-3">
             <Link to="/addbookpage">
               <li>
-                <MdEdit className="bg-black text-yellow-500 rounded-full" />
+                <MdEdit className="bg-black text-yellow-500 rounded-full mr-2" />
               </li>
             </Link>
             <li>
               <MdDelete className="bg-black text-yellow-500 rounded-full" />
             </li>
           </ul>
-          <br />
-          <div className="">نام کتاب</div>
-          <br />
+          <div className="mb-3">نام کتاب</div>
           <div>قیمت کتاب</div>
         </li>
 
         <li>
           <Link to="/bookpage">
-            <img src={book3} alt="book3" className="flex w-1/2" />
+            <img src={book3} alt="book3" className="flex w-1/2 mb-1" />
           </Link>
-          <ul className="space-x-0 flex flex-row">
+          <ul className="space-x-0 flex flex-row mb-3">
             <Link to="/addbookpage">
               <li>
-                <MdEdit className="bg-black text-yellow-500 rounded-full" />
+                <MdEdit className="bg-black text-yellow-500 rounded-full mr-2" />
               </li>
             </Link>
             <li>
               <MdDelete className="bg-black text-yellow-500 rounded-full" />
             </li>
           </ul>
-          <br />
-          <div className="">نام کتاب</div>
-          <br />
+          <div className="mb-3">نام کتاب</div>
           <div>قیمت کتاب</div>
         </li>
 
         <li>
           <Link to="/bookpage">
-            <img src={book4} alt="book4" className="flex w-1/2" />
+            <img src={book4} alt="book4" className="flex w-1/2 mb-1" />
           </Link>
-          <ul className="space-x-0 flex flex-row">
+          <ul className="space-x-0 flex flex-row mb-3">
             <Link to="/addbookpage">
               <li>
-                <MdEdit className="bg-black text-yellow-500 rounded-full" />
+                <MdEdit className="bg-black text-yellow-500 rounded-full mr-2" />
               </li>
             </Link>
             <li>
               <MdDelete className="bg-black text-yellow-500 rounded-full" />
             </li>
           </ul>
-          <br />
-          <div className="">نام کتاب</div>
-          <br />
+          <div className="mb-3">نام کتاب</div>
           <div>قیمت کتاب</div>
         </li>
       </ul>
 
-      <br />
-      <br />
       <Footer />
     </div>
   );

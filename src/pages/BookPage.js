@@ -30,22 +30,18 @@ function BookPage() {
   return (
     <div>
       <HeaderBookPage />
-      <br />
-      <br />
-      <br />
-      <ul className="space-x-8 flex justify-end">
+
+      <ul className="space-x-8 flex justify-end mt-7 mb-7">
         <li className="p-10">
-          <b>کتابخانه نیمه شب</b>
-          <br />
-          <br />
+          <div className="mb-7">
+            <b>کتابخانه نیمه شب</b>
+          </div>
           داستانی راجب حسرت ها
         </li>
         <li>
           <img src={book3} alt="book4" className="flex w-1/2 p-6" />
         </li>
       </ul>
-      <br />
-      <br />
       <ul className="flex justify-start p-10">
         <li>
           <Button
@@ -74,9 +70,8 @@ function BookPage() {
           </IconButton>
         </li>
       </ul>
-      <br />
-      <br />
-      <ul className="flex justify-center p-6 space-x-4">
+
+      <ul className="flex justify-center p-6 space-x-4 mt-7">
         <li>
           <TextField
             label="نظر خود را بنویسید"

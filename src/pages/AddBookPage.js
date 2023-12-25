@@ -39,23 +39,7 @@ function AddBookPage() {
                 <li>نام کتاب</li>
               </ul>
             </li>
-            <div>تصویر کتاب</div>
-            <li className="justify-start text-left">
-              <Button
-                className="text-yellow-500 bg-black rounded-md"
-                aria-label="uploade"
-                size="small"
-                variant="contained"
-                //color="success"
-                sx={{ color: "#fdd400" }}
-                style={{
-                  borderRadius: 25,
-                  backgroundColor: "black",
-                }}
-              >
-                آپلود
-              </Button>
-            </li>
+
             <li>
               <ul className="space-x-5 flex justify-center text-center ">
                 <li>

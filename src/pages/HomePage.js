@@ -12,57 +12,46 @@ function HomePage() {
   return (
     <div className="home-page ">
       <Header />
-      <br />
-      <br />
-      <br />
-      <br />
+
       <Link to="/booklistpage">
-        <div className="text-right text-black p-7">پر فروشترین ها</div>
+        <div className="text-right text-black p-7 mt-8 mb-5">
+          پر فروشترین ها
+        </div>
       </Link>
-      <br />
-      <br />
+
       <ul className="space-x-12 flex justify-end p-5">
         <Link to="/bookpage">
           <li>
-            <img src={book1} alt="book1" className="w-1/2" />
-            <br />
-            <div className="">نام کتاب</div>
-            <br />
+            <img src={book1} alt="book1" className="w-1/2 mb-3 " />
+            <div className="mb-3">نام کتاب</div>
             <div>قیمت کتاب</div>
           </li>
         </Link>
         <Link to="/bookpage">
           <li>
-            <img src={book2} alt="book2" className="w-1/2" />
-            <br />
-            <div className="">نام کتاب</div>
-            <br />
+            <img src={book2} alt="book2" className="w-1/2 mb-3" />
+            <div className="mb-3">نام کتاب</div>
             <div>قیمت کتاب</div>
           </li>
         </Link>
         <Link to="/bookpage">
           <li>
-            <img src={book3} alt="book3" className="w-1/2" />
-            <br />
-            <div className="">نام کتاب</div>
-            <br />
+            <img src={book3} alt="book3" className="w-1/2 mb-3" />
+            <div className="mb-3">نام کتاب</div>
             <div>قیمت کتاب</div>
           </li>
         </Link>
         <Link to="/bookpage">
           <li>
-            <img src={book4} alt="book4" className="w-1/2" />
-            <br />
-            <div className="">نام کتاب</div>
-            <br />
+            <img src={book4} alt="book4" className="w-1/2 mb-3" />
+            <div className="mb-3">نام کتاب</div>
             <div>قیمت کتاب</div>
           </li>
         </Link>
       </ul>
       <Link to="/booklistpage">
-        <div className="text-right text-black p-7">ژانر ها</div>
+        <div className="text-right text-black p-7 mb-5">ژانر ها</div>
       </Link>
-      <br />
       <div className="bg-yellow-500 p-10 rounded ">
         <ul className="space-x-16 flex justify-center text-center">
           <Link to="/booklistpage">
@@ -103,53 +92,42 @@ function HomePage() {
           </Link>
         </ul>
       </div>
-      <br />
-      <br />
-      <br />
       <Link to="/booklistpage">
-        <div className="text-right text-black p-7">پیشنهادی برای شما</div>
+        <div className="text-right text-black p-7 mt-7 mb-5">
+          پیشنهادی برای شما
+        </div>
       </Link>
-      <br />
       <ul className="space-x-12 flex justify-self-end p-5">
         <Link to="/bookpage">
           <li>
-            <img src={book1} alt="book1" className="flex w-1/2" />
-            <br />
-            <div className="">نام کتاب</div>
-            <br />
+            <img src={book1} alt="book1" className="flex w-1/2 mb-3" />
+            <div className="mb-3">نام کتاب</div>
             <div>قیمت کتاب</div>
           </li>
         </Link>
         <Link to="/bookpage">
           <li>
-            <img src={book2} alt="book2" className="flex w-1/2" />
-            <br />
-            <div className="">نام کتاب</div>
-            <br />
+            <img src={book2} alt="book2" className="flex w-1/2 mb-3" />
+            <div className="mb-3">نام کتاب</div>
             <div>قیمت کتاب</div>
           </li>
         </Link>
         <Link to="/bookpage">
           <li>
-            <img src={book3} alt="book3" className="flex w-1/2" />
-            <br />
-            <div className="">نام کتاب</div>
-            <br />
+            <img src={book3} alt="book3" className="flex w-1/2 mb-3" />
+            <div className="mb-3">نام کتاب</div>
             <div>قیمت کتاب</div>
           </li>
         </Link>
         <Link to="/bookpage">
           <li>
-            <img src={book4} alt="book4" className="flex w-1/2" />
-            <br />
-            <div className="">نام کتاب</div>
-            <br />
+            <img src={book4} alt="book4" className="flex w-1/2 mb-3" />
+            <div className="mb-3">نام کتاب</div>
             <div>قیمت کتاب</div>
           </li>
         </Link>
       </ul>
-      <br />
-      <Footer />
+      <Footer className="mt-7" />
     </div>
   );
 }
