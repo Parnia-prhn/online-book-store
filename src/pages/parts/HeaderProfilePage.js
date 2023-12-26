@@ -19,40 +19,80 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import { CgProfile } from "react-icons/cg";
 
 function HeaderProfilePage() {
+  
   return (
     <header className="bg-yellow-500 rounded-b-lg p-10  ">
       <div className=" px-4 py-2">
-      <Link to="/profilepage">
-        <IconButton
-          edge="start"
-          className="text-white bg-black rounded-full p-1"
-          aria-label="profile"
-        >
-          <AccountCircleIcon className="text-yellow-500 bg-black w-40 h-40 rounded-full" />
-        </IconButton>
+        <Link to="/profilepage">
+          <IconButton
+            edge="start"
+            className=""
+            aria-label="profile"
+            sx={{
+              bgcolor: "black",
+              margin: "5px",
+              "& svg": {
+                fontSize: "1.5rem",
+                color: "#FFEB3B",
+              },
+            }}
+          >
+            <AccountCircleIcon className="" />
+          </IconButton>
         </Link>
         <Link to="/booklistpage">
-        <IconButton className="text-black " aria-label="favorite-list">
-          <FavoriteIcon className="text-yellow-500 bg-black w-40 h-40 rounded-full" />
-        </IconButton>
+          <IconButton
+            className=""
+            sx={{
+              bgcolor: "black",
+              margin: "5px",
+              "& svg": {
+                fontSize: "1.5rem",
+                color: "#FFEB3B",
+              },
+            }}
+            aria-label="favorite-list"
+          >
+            <FavoriteIcon className="" />
+          </IconButton>
         </Link>
         <Link to="/booklistpage">
-        <IconButton className="text-black" aria-label="shopping-cart">
-          <ShoppingCartIcon className="text-yellow-500 bg-black w-40 h-40 rounded-full" />
-        </IconButton>
+          <IconButton
+            className=""
+            sx={{
+              bgcolor: "black",
+              margin: "5px",
+              "& svg": {
+                fontSize: "1.5rem",
+                color: "#FFEB3B",
+              },
+            }}
+            aria-label="shopping-cart"
+          >
+            <ShoppingCartIcon className="" />
+          </IconButton>
         </Link>
-      <Link to="/addbookpage">
-        <IconButton className="text-black" aria-label="add-book">
-          <AddIcon className="text-yellow-500 bg-black w-40 h-40 rounded-full" />
-        </IconButton>
+        <Link to="/addbookpage">
+          <IconButton
+            className=""
+            sx={{
+              bgcolor: "black",
+              margin: "5px",
+              "& svg": {
+                fontSize: "1.5rem",
+                color: "#FFEB3B",
+              },
+            }}
+            aria-label="add-book"
+          >
+            <AddIcon className="" />
+          </IconButton>
         </Link>
       </div>
 
       <nav>
         <ul className="flex space-x-12 text-center justify-center translate-y-1/4 ">
-          <li
-            className="bg-black rounded-full w-40 h-40 flex items-center justify-center border-8 border-white text-yellow-500 hover:text-white transform translate-y-1/2 "
-          >
+          <li className="bg-black rounded-full w-40 h-40 flex items-center justify-center border-8 border-white text-yellow-500 hover:text-white transform translate-y-1/2 ">
             <CgProfile className="text-8xl" />
           </li>
         </ul>

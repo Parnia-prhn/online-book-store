@@ -26,20 +26,50 @@ function HeaderBookPage() {
         <Link to="/profilepage">
           <IconButton
             edge="start"
-            className="text-white bg-black rounded-full p-1"
+            sx={{
+              bgcolor: "black",
+              margin: "5px",
+              "& svg": {
+                fontSize: "1.5rem",
+                color: "#FFEB3B",
+              },
+            }}
+            className=""
             aria-label="profile"
           >
-            <AccountCircleIcon className="text-yellow-500 bg-black w-40 h-40 rounded-full" />
+            <AccountCircleIcon className="" />
           </IconButton>
         </Link>
         <Link to="/booklistpage">
-          <IconButton className="text-black " aria-label="favorite-list">
-            <FavoriteIcon className="text-yellow-500 bg-black w-40 h-40 rounded-full" />
+          <IconButton
+            className=" "
+            sx={{
+              bgcolor: "black",
+              margin: "5px",
+              "& svg": {
+                fontSize: "1.5rem",
+                color: "#FFEB3B",
+              },
+            }}
+            aria-label="favorite-list"
+          >
+            <FavoriteIcon className="" />
           </IconButton>
         </Link>
         <Link to="/booklistpage">
-          <IconButton className="text-black" aria-label="shopping-cart">
-            <ShoppingCartIcon className="text-yellow-500 bg-black w-40 h-40 rounded-full" />
+          <IconButton
+            className=""
+            sx={{
+              bgcolor: "black",
+              margin: "5px",
+              "& svg": {
+                fontSize: "1.5rem",
+                color: "#FFEB3B",
+              },
+            }}
+            aria-label="shopping-cart"
+          >
+            <ShoppingCartIcon className="" />
           </IconButton>
         </Link>
       </div>

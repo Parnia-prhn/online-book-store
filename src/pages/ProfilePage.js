@@ -19,6 +19,12 @@ import { MdEdit } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
 
 function ProfilePage() {
+  const books = [
+    { id: 1, image: book1, name: "نام کتاب 1", price: "قیمت کتاب 1" },
+    { id: 2, image: book2, name: "نام کتاب 2", price: "قیمت کتاب 2" },
+    { id: 3, image: book3, name: "نام کتاب 3", price: "قیمت کتاب 3" },
+    { id: 4, image: book4, name: "نام کتاب 4", price: "قیمت کتاب 4" },
+  ];
   return (
     <div className="justify-center">
       <HeaderProfilePage />
@@ -27,143 +33,70 @@ function ProfilePage() {
         نام و توضیحات کاربر
       </div>
 
-      <div className="text-right text-black p-7 font-yekan text-lg">کتاب های خریداری شده</div>
-      <ul className="space-x-12 flex justify-self-end ml-5">
-        <Link to="/bookpage">
-          <li>
-            <img src={book1} alt="book1" className="flex w-1/2 mb-3" />
-            <div className="font-yekan text-base mb-3">نام کتاب</div>
-            <div className="font-yekan text-base ">قیمت کتاب</div>
-          </li>
-        </Link>
-        <Link to="/bookpage">
-          <li>
-            <img src={book2} alt="book2" className="flex w-1/2 mb-3" />
-            <div className="font-yekan text-base mb-3">نام کتاب</div>
-            <div className="font-yekan text-base ">قیمت کتاب</div>
-          </li>
-        </Link>
-        <Link to="/bookpage">
-          <li>
-            <img src={book3} alt="book3" className="flex w-1/2 mb-3" />
-            <div className="font-yekan text-base mb-3">نام کتاب</div>
-            <div className="font-yekan text-base ">قیمت کتاب</div>
-          </li>
-        </Link>
-        <Link to="/bookpage">
-          <li>
-            <img src={book4} alt="book4" className="flex w-1/2 mb-3" />
-            <div className="font-yekan text-base mb-3">نام کتاب</div>
-            <div className="font-yekan text-base ">قیمت کتاب</div>
-          </li>
-        </Link>
+      <div className="text-right text-black p-7 font-yekan text-lg">
+        کتاب های خریداری شده
+      </div>
+      <ul className="space-x-12 flex justify-end p-5">
+        {books.map((book) => (
+          <Link to="/bookpage" key={book.id}>
+            <li>
+              <img
+                src={book.image}
+                alt={`book${book.id}`}
+                className="w-1/2 mb-3"
+              />
+              <div className="font-yekan text-base mb-3 ">{book.name}</div>
+              <div className="font-yekan text-base">{book.price}</div>
+            </li>
+          </Link>
+        ))}
       </ul>
 
-      <div className="text-right text-black p-7 font-yekan text-lg">کتاب های پسندیده شده</div>
-      <ul className="space-x-12 flex justify-self-end ml-5">
-        <Link to="/bookpage">
-          <li>
-            <img src={book1} alt="book1" className="flex w-1/2 mb-3" />
-            <div className="font-yekan text-base mb-3">نام کتاب</div>
-            <div className="font-yekan text-base ">قیمت کتاب</div>
-          </li>
-        </Link>
-        <Link to="/bookpage">
-          <li>
-            <img src={book2} alt="book2" className="flex w-1/2 mb-3" />
-            <div className="font-yekan text-base mb-3">نام کتاب</div>
-            <div className="font-yekan text-base ">قیمت کتاب</div>
-          </li>
-        </Link>
-        <Link to="/bookpage">
-          <li>
-            <img src={book3} alt="book3" className="flex w-1/2 mb-3" />
-            <div className="font-yekan text-base mb-3">نام کتاب</div>
-            <div className="font-yekan text-base ">قیمت کتاب</div>
-          </li>
-        </Link>
-        <Link to="/bookpage">
-          <li>
-            <img src={book4} alt="book4" className="flex w-1/2 mb-3" />
-            <div className="font-yekan text-base mb-3">نام کتاب</div>
-            <div className="font-yekan text-base ">قیمت کتاب</div>
-          </li>
-        </Link>
+      <div className="text-right text-black p-7 font-yekan text-lg">
+        کتاب های پسندیده شده
+      </div>
+      <ul className="space-x-12 flex justify-end p-5">
+        {books.map((book) => (
+          <Link to="/bookpage" key={book.id}>
+            <li>
+              <img
+                src={book.image}
+                alt={`book${book.id}`}
+                className="w-1/2 mb-3"
+              />
+              <div className="font-yekan text-base mb-3 ">{book.name}</div>
+              <div className="font-yekan text-base">{book.price}</div>
+            </li>
+          </Link>
+        ))}
       </ul>
-
-      <div className="text-right text-black p-7 font-yekan text-lg">کتاب های من</div>
+      <div className="text-right text-black p-7 font-yekan text-lg">
+        کتاب های من
+      </div>
       <ul className="space-x-12 flex justify-self-end ml-5 mb-7">
-        <li>
-          <Link to="/bookpage">
-            <img src={book1} alt="book1" className="flex w-1/2 mb-1" />
-          </Link>
-          <ul className="space-x-0 flex flex-row mb-3">
-            <Link to="/addbookpage">
-              <li>
-                <MdEdit className="bg-black text-yellow-500 rounded-full mr-2 " />
-              </li>
+        {books.map((book) => (
+          <li key={book.id}>
+            <Link to="/bookpage">
+              <img
+                src={book.image}
+                alt={`book${book.id}`}
+                className="flex w-1/2 mb-1"
+              />
             </Link>
-            <li>
-              <MdDelete className="bg-black text-yellow-500 rounded-full" />
-            </li>
-          </ul>
-          <div className="font-yekan text-base mb-3">نام کتاب</div>
-          <div className="font-yekan text-base ">قیمت کتاب</div>
-        </li>
-
-        <li>
-          <Link to="/bookpage">
-            <img src={book2} alt="book2" className="flex w-1/2 mb-1" />
-          </Link>
-          <ul className="space-x-0 flex flex-row mb-3">
-            <Link to="/addbookpage">
+            <ul className="space-x-0 flex flex-row mb-3">
+              <Link to="/addbookpage">
+                <li>
+                  <MdEdit className="bg-black text-yellow-500 rounded-full mr-2" />
+                </li>
+              </Link>
               <li>
-                <MdEdit className="bg-black text-yellow-500 rounded-full mr-2" />
+                <MdDelete className="bg-black text-yellow-500 rounded-full" />
               </li>
-            </Link>
-            <li>
-              <MdDelete className="bg-black text-yellow-500 rounded-full" />
-            </li>
-          </ul>
-          <div className="font-yekan text-base mb-3">نام کتاب</div>
-          <div className="font-yekan text-base ">قیمت کتاب</div>
-        </li>
-
-        <li>
-          <Link to="/bookpage">
-            <img src={book3} alt="book3" className="flex w-1/2 mb-1" />
-          </Link>
-          <ul className="space-x-0 flex flex-row mb-3">
-            <Link to="/addbookpage">
-              <li>
-                <MdEdit className="bg-black text-yellow-500 rounded-full mr-2" />
-              </li>
-            </Link>
-            <li>
-              <MdDelete className="bg-black text-yellow-500 rounded-full" />
-            </li>
-          </ul>
-          <div className="font-yekan text-base mb-3">نام کتاب</div>
-          <div className="font-yekan text-base ">قیمت کتاب</div>
-        </li>
-
-        <li>
-          <Link to="/bookpage">
-            <img src={book4} alt="book4" className="flex w-1/2 mb-1" />
-          </Link>
-          <ul className="space-x-0 flex flex-row mb-3">
-            <Link to="/addbookpage">
-              <li>
-                <MdEdit className="bg-black text-yellow-500 rounded-full mr-2" />
-              </li>
-            </Link>
-            <li>
-              <MdDelete className="bg-black text-yellow-500 rounded-full" />
-            </li>
-          </ul>
-          <div className="font-yekan text-base mb-3">نام کتاب</div>
-          <div className="font-yekan text-base ">قیمت کتاب</div>
-        </li>
+            </ul>
+            <div className="font-yekan text-base mb-3">{book.name}</div>
+            <div className="font-yekan text-base">{book.price}</div>
+          </li>
+        ))}
       </ul>
 
       <Footer />

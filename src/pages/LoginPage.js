@@ -66,11 +66,6 @@ function LoginPage() {
                       size="small"
                       className="flex "
                       sx={{ m: 1, width: 180, backgroundColor: "white" }}
-                      InputProps={{
-                        style: {
-                          borderRadius: "8px",
-                        },
-                      }}
                     />
                   </li>
                   <li className="font-yekan text-lg">نام کاربری</li>

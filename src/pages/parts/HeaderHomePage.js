@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { Outlet, Link } from "react-router-dom";
 
+import yellow from "@mui/material/colors/yellow";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import IconButton from "@mui/material/IconButton";
@@ -24,36 +25,82 @@ function Header() {
         <Link to="/profilepage">
           <IconButton
             edge="start"
-            className="text-white bg-black rounded-full p-1"
+            className=""
             aria-label="profile"
+            sx={{
+              bgcolor: "black",
+              margin: "5px",
+              "& svg": {
+                fontSize: "1.5rem",
+                color: "#FFEB3B",
+              },
+            }}
           >
-            <AccountCircleIcon className="text-yellow-500 bg-black w-40 h-40 rounded-full" />
+            <AccountCircleIcon className="" />
           </IconButton>
         </Link>
         <Link to="/booklistpage">
-          <IconButton className="text-black " aria-label="favorite-list">
-            <FavoriteIcon className="text-yellow-500 bg-black w-40 h-40 rounded-full" />
+          <IconButton
+            className=""
+            aria-label="favorite-list"
+            sx={{
+              bgcolor: "black",
+              margin: "5px",
+              "& svg": {
+                fontSize: "1.5rem",
+                color: "#FFEB3B",
+              },
+            }}
+          >
+            <FavoriteIcon className="" />
           </IconButton>
         </Link>
         <Link to="/booklistpage">
-          <IconButton className="text-black" aria-label="shopping-cart">
-            <ShoppingCartIcon className="text-yellow-500 bg-black w-40 h-40 rounded-full" />
+          <IconButton
+            className=""
+            aria-label="shopping-cart"
+            sx={{
+              bgcolor: "black",
+              margin: "5px",
+              "& svg": {
+                fontSize: "1.5rem",
+                color: "#FFEB3B",
+              },
+            }}
+          >
+            <ShoppingCartIcon className="" />
           </IconButton>
         </Link>
         <Link to="/addbookpage">
-          <IconButton className="text-black" aria-label="add-book">
-            <AddIcon className="text-yellow-500 bg-black w-40 h-40 rounded-full" />
+          <IconButton
+            className=""
+            aria-label="add-book"
+            sx={{
+              bgcolor: "black",
+              margin: "5px",
+              "& svg": {
+                fontSize: "1.5rem",
+                color: "#FFEB3B",
+              },
+            }}
+          >
+            <AddIcon className="" />
           </IconButton>
         </Link>
         <Button
           component={Link}
           to="/signuppage"
-          className="text-yellow-500 bg-black rounded-md font-yekan"
+          className=" font-yekan"
           aria-label="sign-up"
           size="small"
           variant="contained"
           //color="success"
-          sx={{ color: "#fdd400" }}
+          sx={{
+            color: "#fdd400",
+            fontSize: "1rem",
+            padding: "10px 26px",
+            margin: "5px",
+          }}
           style={{
             borderRadius: 25,
             backgroundColor: "black",
@@ -65,12 +112,23 @@ function Header() {
 
       <div className="text-center">
         <Link to="/booklistpage">
-          <IconButton className="" aria-label="search">
+          <IconButton
+            className=""
+            aria-label="search"
+            sx={{
+              bgcolor: "black",
+              margin: "5px",
+              "& svg": {
+                fontSize: "1.5rem",
+                color: "#FFEB3B",
+              },
+            }}
+          >
             <SearchIcon
               edge="start"
               color="default"
               aria-label="menu"
-              className="text-yellow-500 w-20 h-20 bg-black rounded-full"
+              className=""
             />
           </IconButton>
         </Link>

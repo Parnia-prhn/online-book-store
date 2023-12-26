@@ -50,7 +50,12 @@ function BookPage() {
             size="small"
             variant="contained"
             //color="success"
-            sx={{ color: "#fdd400" }}
+            sx={{
+              color: "#fdd400",
+              fontSize: "1rem",
+              padding: "9px 25px",
+              margin: "5px",
+            }}
             style={{
               borderRadius: 25,
               backgroundColor: "black",
@@ -60,13 +65,35 @@ function BookPage() {
           </Button>
         </li>
         <li>
-          <IconButton className="text-black " aria-label="favorite-list">
-            <FavoriteIcon className="text-yellow-500 bg-black w-40 h-40 rounded-full" />
+          <IconButton
+            className=" "
+            sx={{
+              bgcolor: "black",
+              margin: "5px",
+              "& svg": {
+                fontSize: "1.5rem",
+                color: "#FFEB3B",
+              },
+            }}
+            aria-label="favorite-list"
+          >
+            <FavoriteIcon className="" />
           </IconButton>
         </li>
         <li>
-          <IconButton className="text-black " aria-label="comment">
-            <CommentIcon className="text-yellow-500 bg-black w-40 h-40 rounded-full" />
+          <IconButton
+            className=""
+            sx={{
+              bgcolor: "black",
+              margin: "5px",
+              "& svg": {
+                fontSize: "1.5rem",
+                color: "#FFEB3B",
+              },
+            }}
+            aria-label="comment"
+          >
+            <CommentIcon className="" />
           </IconButton>
         </li>
       </ul>
@@ -83,10 +110,18 @@ function BookPage() {
         <li>
           <IconButton
             edge="start"
-            className="text-white bg-black rounded-full p-1"
+            className=""
+            sx={{
+              bgcolor: "black",
+              margin: "5px",
+              "& svg": {
+                fontSize: "1.5rem",
+                color: "#FFEB3B",
+              },
+            }}
             aria-label="profile"
           >
-            <AccountCircleIcon className="text-yellow-500 bg-black w-90 h-90 rounded-full" />
+            <AccountCircleIcon className="" />
           </IconButton>
         </li>
       </ul>

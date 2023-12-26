@@ -26,79 +26,52 @@ import { MdEdit } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
 
 function BookListPage() {
+  const books = [
+    { id: 1, image: book1, name: "نام کتاب 1", price: "قیمت کتاب 1" },
+    { id: 2, image: book2, name: "نام کتاب 2", price: "قیمت کتاب 2" },
+    { id: 3, image: book3, name: "نام کتاب 3", price: "قیمت کتاب 3" },
+    { id: 4, image: book4, name: "نام کتاب 4", price: "قیمت کتاب 4" },
+  ];
   return (
     <div>
       <HeaderBookPage />
 
       <ul className="space-y-5 justify-center mt-7 mb-5">
         <li>
-          <ul className="space-x-12 flex p-5">
-            <Link to="/bookpage">
-              <li>
-                <img src={book1} alt="book1" className="flex w-1/2 mb-3" />
-                <div className="font-yekan text-base mb-3">نام کتاب</div>
-                <div className="font-yekan text-base ">قیمت کتاب</div>
-              </li>
-            </Link>
-            <Link to="/bookpage">
-              <li>
-                <img src={book2} alt="book2" className="flex w-1/2 mb-3" />
-                <div className="font-yekan text-base mb-3">نام کتاب</div>
-                <div className="font-yekan text-base ">قیمت کتاب</div>
-              </li>
-            </Link>
-
-            <Link to="/bookpage">
-              <li>
-                <img src={book3} alt="book3" className="flex w-1/2 mb-3" />
-                <div className="font-yekan text-base mb-3">نام کتاب</div>
-                <div className="font-yekan text-base ">قیمت کتاب</div>
-              </li>
-            </Link>
-            <Link to="/bookpage">
-              <li>
-                <img src={book4} alt="book4" className="flex w-1/2 mb-3" />
-                <div className="font-yekan text-base mb-3">نام کتاب</div>
-                <div className="font-yekan text-base ">قیمت کتاب</div>
-              </li>
-            </Link>
+          <ul className="space-x-12 flex justify-end p-5">
+            {books.map((book) => (
+              <Link to="/bookpage" key={book.id}>
+                <li>
+                  <img
+                    src={book.image}
+                    alt={`book${book.id}`}
+                    className="w-1/2 mb-3"
+                  />
+                  <div className="font-yekan text-base mb-3 ">{book.name}</div>
+                  <div className="font-yekan text-base">{book.price}</div>
+                </li>
+              </Link>
+            ))}
           </ul>
         </li>
         <li>
-          <ul className="space-x-12 flex justify-self-end p-5">
-            <Link to="/bookpage">
-              <li>
-                <img src={book1} alt="book1" className="flex w-1/2 mb-3" />
-                <div className="font-yekan text-base mb-3">نام کتاب</div>
-                <div className="font-yekan text-base ">قیمت کتاب</div>
-              </li>
-            </Link>
-            <Link to="/bookpage">
-              <li>
-                <img src={book2} alt="book2" className="flex w-1/2 mb-3" />
-                <div className="font-yekan text-base mb-3">نام کتاب</div>
-                <div className="font-yekan text-base ">قیمت کتاب</div>
-              </li>
-            </Link>
-            <Link to="/bookpage">
-              <li>
-                <img src={book3} alt="book3" className="flex w-1/2 mb-3" />
-                <div className="font-yekan text-base mb-3">نام کتاب</div>
-                <div className="font-yekan text-base ">قیمت کتاب</div>
-              </li>
-            </Link>
-            <Link to="/bookpage">
-              <li>
-                <img src={book4} alt="book4" className="flex w-1/2 mb-3" />
-                <div className="font-yekan text-base mb-3">نام کتاب</div>
-                <div className="font-yekan text-base ">قیمت کتاب</div>
-              </li>
-            </Link>
+          <ul className="space-x-12 flex justify-end p-5">
+            {books.map((book) => (
+              <Link to="/bookpage" key={book.id}>
+                <li>
+                  <img
+                    src={book.image}
+                    alt={`book${book.id}`}
+                    className="w-1/2 mb-3"
+                  />
+                  <div className="font-yekan text-base mb-3 ">{book.name}</div>
+                  <div className="font-yekan text-base">{book.price}</div>
+                </li>
+              </Link>
+            ))}
           </ul>
         </li>
       </ul>
-      <br />
-      <br />
     </div>
   );
 }
