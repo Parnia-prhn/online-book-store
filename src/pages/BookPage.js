@@ -14,19 +14,16 @@ import book4 from "../assets/images/book4.jpg";
 
 // Import some icons
 import CommentIcon from "@mui/icons-material/Comment";
-import SearchIcon from "@mui/icons-material/Search";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import AddIcon from "@mui/icons-material/Add";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import HomeIcon from "@mui/icons-material/Home";
-import InfoIcon from "@mui/icons-material/Info";
-import ContactMailIcon from "@mui/icons-material/ContactMail";
-import SettingsIcon from "@mui/icons-material/Settings";
-import { MdEdit } from "react-icons/md";
-import { MdDelete } from "react-icons/md";
 
 function BookPage() {
+  const books = [
+    { id: 1, image: book1, name: "نام کتاب 1", price: "قیمت کتاب 1" },
+    { id: 2, image: book2, name: "نام کتاب 2", price: "قیمت کتاب 2" },
+    { id: 3, image: book3, name: "نام کتاب 3", price: "قیمت کتاب 3" },
+    { id: 4, image: book4, name: "نام کتاب 4", price: "قیمت کتاب 4" },
+  ];
   return (
     <div>
       <HeaderBookPage />

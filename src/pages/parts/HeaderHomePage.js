@@ -89,9 +89,9 @@ function Header() {
         </Link>
         <Button
           component={Link}
-          to="/signuppage"
+          to="/loginpage"
           className=" font-yekan"
-          aria-label="sign-up"
+          aria-label="login"
           size="small"
           variant="contained"
           //color="success"
@@ -106,11 +106,11 @@ function Header() {
             backgroundColor: "black",
           }}
         >
-          ثبت نام
+          ورود به حساب کاربری
         </Button>
       </div>
 
-      <div className="text-center">
+      <div className="text-center mt-10">
         <Link to="/booklistpage">
           <IconButton
             className=""
@@ -127,7 +127,7 @@ function Header() {
             <SearchIcon
               edge="start"
               color="default"
-              aria-label="menu"
+              aria-label="search"
               className=""
             />
           </IconButton>

@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Outlet, Link } from "react-router-dom";
-import { styled } from "@mui/system";
+
 import book1 from "../assets/images/book1.jpg";
 import book2 from "../assets/images/book2.jpg";
 import book3 from "../assets/images/book3.jpg";

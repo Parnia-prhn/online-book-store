@@ -37,8 +37,7 @@ function LoginPage() {
     ) {
       setError("");
       console.log("Login successful");
-      setIsLoggedIn(true); // Set the logged-in state to true
-      // You can redirect the user or perform additional actions here
+      setIsLoggedIn(true);
     } else {
       setError("Invalid username or password");
     }
@@ -134,11 +133,17 @@ function LoginPage() {
                   <FaLinkedin className="text-yellow-500 bg-black w-15 h-15 rounded-full" />
                 </IconButton>
               </div>
+              <Link
+                to="/signuppage"
+                className="text-black text-lg hover:text-white font-yakan"
+              >
+                <div className="flex justify-center">ساخت حساب کاربری</div>
+              </Link>
             </li>
           </ul>
         </div>
       </div>
-      {isLoggedIn && <Link to="/profilepage">Go to profile</Link>}
+      {isLoggedIn && <Link to="/profilepage">ورود به پروفایل</Link>}
     </div>
   );
 }

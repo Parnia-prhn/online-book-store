@@ -2,10 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { Outlet, Link } from "react-router-dom";
 
-import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
-import IconButton from "@mui/material/IconButton";
-import InputAdornment from "@mui/material/InputAdornment";
 import HeaderProfilePage from "./parts/HeaderProfilePage.js";
 import Footer from "./parts/Footer.js";
 import book1 from "../assets/images/book1.jpg";
