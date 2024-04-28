@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Outlet, Link } from "react-router-dom";
-
+import { useState, useEffect } from "react";
+import axios from "axios";
 import HeaderProfilePage from "./parts/HeaderProfilePage.js";
 import Footer from "./parts/Footer.js";
 import book1 from "../assets/images/book1.jpg";
@@ -15,12 +16,65 @@ import { MdEdit } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
 
 function ProfilePage() {
-  const books = [
-    { id: 1, image: book1, name: "نام کتاب 1", price: "قیمت کتاب 1" },
-    { id: 2, image: book2, name: "نام کتاب 2", price: "قیمت کتاب 2" },
-    { id: 3, image: book3, name: "نام کتاب 3", price: "قیمت کتاب 3" },
-    { id: 4, image: book4, name: "نام کتاب 4", price: "قیمت کتاب 4" },
-  ];
+  const [boughtBooks, setBoughtBooks] = useState([]);
+
+  useEffect((userId) => {
+    const fetchBoughtBooks = async () => {
+      try {
+        const response = await axios.get(`/shoppingCart/allBought/${userId}`);
+        setBoughtBooks(response.data);
+      } catch (error) {
+        console.error("Error fetching books:", error);
+      }
+    };
+    fetchBoughtBooks();
+    return () => {};
+  }, []);
+
+  const [favoriteBooks, setFavoriteBooks] = useState([]);
+
+  useEffect((userId) => {
+    const fetchFavoriteBooks = async () => {
+      try {
+        const response = await axios.get(`/books/favoriteBooks/${userId}`);
+        setFavoriteBooks(response.data);
+      } catch (error) {
+        console.error("Error fetching books:", error);
+      }
+    };
+    fetchFavoriteBooks();
+    return () => {};
+  }, []);
+
+  const [addedbooks, setAddedbooks] = useState([]);
+
+  useEffect((userId) => {
+    const fetchAddedbooks = async () => {
+      try {
+        const response = await axios.get(`/users/addedbooks/${userId}`);
+        setAddedbooks(response.data);
+      } catch (error) {
+        console.error("Error fetching books:", error);
+      }
+    };
+    fetchAddedbooks();
+    return () => {};
+  }, []);
+  const handleDeleteBook = (userId, bookId) => {
+    // Send a DELETE request to delete the book with the specified id
+    axios
+      .delete(`/books/delete/${userId}/${bookId}`)
+      .then((response) => {
+        // If deletion is successful, update the books state to remove the deleted book
+        setAddedbooks((prevBooks) =>
+          prevBooks.filter((book) => book.id !== bookId)
+        );
+      })
+      .catch((error) => {
+        console.error("Error deleting book:", error);
+      });
+  };
+
   return (
     <div className="justify-center">
       <HeaderProfilePage />
@@ -33,7 +87,7 @@ function ProfilePage() {
         کتاب های خریداری شده
       </div>
       <ul className="space-x-12 flex justify-end p-5">
-        {books.map((book) => (
+        {boughtBooks.map((book) => (
           <Link to="/bookpage" key={book.id}>
             <li>
               <img
@@ -41,7 +95,7 @@ function ProfilePage() {
                 alt={`book${book.id}`}
                 className="w-1/2 mb-3"
               />
-              <div className="font-yekan text-base mb-3 ">{book.name}</div>
+              <div className="font-yekan text-base mb-3 ">{book.title}</div>
               <div className="font-yekan text-base">{book.price}</div>
             </li>
           </Link>
@@ -52,7 +106,7 @@ function ProfilePage() {
         کتاب های پسندیده شده
       </div>
       <ul className="space-x-12 flex justify-end p-5">
-        {books.map((book) => (
+        {favoriteBooks.map((book) => (
           <Link to="/bookpage" key={book.id}>
             <li>
               <img
@@ -60,7 +114,7 @@ function ProfilePage() {
                 alt={`book${book.id}`}
                 className="w-1/2 mb-3"
               />
-              <div className="font-yekan text-base mb-3 ">{book.name}</div>
+              <div className="font-yekan text-base mb-3 ">{book.title}</div>
               <div className="font-yekan text-base">{book.price}</div>
             </li>
           </Link>
@@ -70,7 +124,7 @@ function ProfilePage() {
         کتاب های من
       </div>
       <ul className="space-x-12 flex justify-self-end ml-5 mb-7">
-        {books.map((book) => (
+        {addedbooks.map((book) => (
           <li key={book.id}>
             <Link to="/bookpage">
               <img
@@ -80,16 +134,19 @@ function ProfilePage() {
               />
             </Link>
             <ul className="space-x-0 flex flex-row mb-3">
-              <Link to="/addbookpage">
+              <Link to={`/editbookpage/${book.userIdCreator}/${book.id}`}>
                 <li>
                   <MdEdit className="bg-black text-yellow-500 rounded-full mr-2" />
                 </li>
               </Link>
               <li>
-                <MdDelete className="bg-black text-yellow-500 rounded-full" />
+                <MdDelete
+                  className="bg-black text-yellow-500 rounded-full"
+                  onClick={() => handleDeleteBook(book.userIdCreator, book.id)}
+                />
               </li>
             </ul>
-            <div className="font-yekan text-base mb-3">{book.name}</div>
+            <div className="font-yekan text-base mb-3">{book.title}</div>
             <div className="font-yekan text-base">{book.price}</div>
           </li>
         ))}

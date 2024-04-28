@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
-import { Outlet, Link } from "react-router-dom";
-
+import { Outlet, Link, useHistory } from "react-router-dom";
+import axios from "axios";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import IconButton from "@mui/material/IconButton";
@@ -11,6 +11,31 @@ import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 
 function SignupPage() {
+  const [formData, setFormData] = useState({
+    username: "",
+    password: "",
+    age: "",
+    gender: "",
+    genre: "",
+  });
+  const [error, setError] = useState("");
+  const history = useHistory();
+
+  const handleInputChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post("/signup", formData);
+      console.log("Signup successful:", response.data);
+      window.location.href = "/";
+    } catch (error) {
+      console.error("Signup failed:", error.response.data.message);
+      setError("Signup failed. Please try again.");
+    }
+  };
   return (
     <div classNAme="justify-stretch">
       <div className="bg-yellow-500 rounded-lg m-5 p-5 border-4 border-black">

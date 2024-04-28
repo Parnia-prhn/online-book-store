@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import ReactDOM from "react-dom/client";
-import { Link } from "react-router-dom";
-
+import { Link, useHistory } from "react-router-dom";
+import axios from "axios";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import IconButton from "@mui/material/IconButton";
@@ -13,35 +13,31 @@ import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 
 function LoginPage() {
-  const validCredentials = {
-    username: "admin",
-    password: "admin",
-  };
-
   const [credentials, setCredentials] = useState({
     username: "",
     password: "",
   });
   const [error, setError] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const history = useHistory(); // Access history object for redirection
 
   const handleInputChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    if (
-      credentials.username === validCredentials.username &&
-      credentials.password === validCredentials.password
-    ) {
-      setError("");
+    try {
+      const response = await axios.post("/login", credentials);
+      const token = response.data.token;
+      localStorage.setItem("token", token);
       console.log("Login successful");
-      setIsLoggedIn(true);
-    } else {
+      history.push("/profilepage");
+    } catch (error) {
+      console.error("Login failed:", error.response.data.message);
       setError("Invalid username or password");
     }
   };
+
   return (
     <div className="justify-stretch">
       <div className="bg-yellow-500 rounded-lg m-5 p-5 border-4 border-black">
@@ -143,7 +139,6 @@ function LoginPage() {
           </ul>
         </div>
       </div>
-      {isLoggedIn && <Link to="/profilepage">ورود به پروفایل</Link>}
     </div>
   );
 }

@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import { Outlet, Link } from "react-router-dom";
 
 import Button from "@mui/material/Button";
@@ -13,12 +15,20 @@ import book3 from "../assets/images/book3.jpg";
 import book4 from "../assets/images/book4.jpg";
 
 function BookListPage() {
-  const books = [
-    { id: 1, image: book1, name: "نام کتاب 1", price: "قیمت کتاب 1" },
-    { id: 2, image: book2, name: "نام کتاب 2", price: "قیمت کتاب 2" },
-    { id: 3, image: book3, name: "نام کتاب 3", price: "قیمت کتاب 3" },
-    { id: 4, image: book4, name: "نام کتاب 4", price: "قیمت کتاب 4" },
-  ];
+  const [books, setBooks] = useState([]);
+
+  useEffect(() => {
+    const fetchBooks = async () => {
+      try {
+        const response = await axios.get("/books");
+        setBooks(response.data);
+      } catch (error) {
+        console.error("Error fetching books:", error);
+      }
+    };
+    fetchBooks();
+    return () => {};
+  }, []);
   return (
     <div>
       <HeaderBookPage />
@@ -34,7 +44,7 @@ function BookListPage() {
                     alt={`book${book.id}`}
                     className="w-1/2 mb-3"
                   />
-                  <div className="font-yekan text-base mb-3 ">{book.name}</div>
+                  <div className="font-yekan text-base mb-3 ">{book.title}</div>
                   <div className="font-yekan text-base">{book.price}</div>
                 </li>
               </Link>
@@ -51,7 +61,7 @@ function BookListPage() {
                     alt={`book${book.id}`}
                     className="w-1/2 mb-3"
                   />
-                  <div className="font-yekan text-base mb-3 ">{book.name}</div>
+                  <div className="font-yekan text-base mb-3 ">{book.title}</div>
                   <div className="font-yekan text-base">{book.price}</div>
                 </li>
               </Link>

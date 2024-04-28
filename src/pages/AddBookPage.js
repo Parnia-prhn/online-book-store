@@ -1,13 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
-import { Outlet, Link } from "react-router-dom";
-
+import { Outlet, Link, useHistory } from "react-router-dom";
+import axios from "axios";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import IconButton from "@mui/material/IconButton";
 import InputAdornment from "@mui/material/InputAdornment";
 
 function AddBookPage() {
+  const [bookData, setBookData] = useState({
+    name: "",
+    author: "",
+    genre: "",
+    publisher: "",
+    price: "",
+  });
+  const history = useHistory();
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setBookData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(
+        `/books/create/${bookData.userIdCreator}`, // Replace userId with actual user id
+        bookData
+      );
+      console.log("Book added successfully:", response.data);
+      history.push("/profilepage");
+    } catch (error) {
+      console.error("Error adding book:", error);
+    }
+  };
   return (
     <div classNAme="justify-stretch">
       <div className="bg-yellow-500 rounded-lg m-5 p-5 border-4 border-black">
