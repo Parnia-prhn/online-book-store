@@ -18,7 +18,7 @@ function LoginPage() {
     password: "",
   });
   const [error, setError] = useState("");
-  const history = useHistory(); // Access history object for redirection
+  // const history = useHistory(); // Access history object for redirection
 
   const handleInputChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
@@ -31,7 +31,8 @@ function LoginPage() {
       const token = response.data.token;
       localStorage.setItem("token", token);
       console.log("Login successful");
-      history.push("/profilepage");
+      window.location.href = "/profilepage";
+      // history.push("");
     } catch (error) {
       console.error("Login failed:", error.response.data.message);
       setError("Invalid username or password");

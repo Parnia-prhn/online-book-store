@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
-import { Outlet, Link, useHistory } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import axios from "axios";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
@@ -19,7 +19,7 @@ function SignupPage() {
     genre: "",
   });
   const [error, setError] = useState("");
-  const history = useHistory();
+  // const history = useHistory();
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });

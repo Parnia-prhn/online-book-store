@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
-import { Outlet, Link, useHistory } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import axios from "axios";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
@@ -15,7 +15,7 @@ function AddBookPage() {
     publisher: "",
     price: "",
   });
-  const history = useHistory();
+  // const history = useHistory();
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setBookData((prevData) => ({
@@ -32,7 +32,8 @@ function AddBookPage() {
         bookData
       );
       console.log("Book added successfully:", response.data);
-      history.push("/profilepage");
+      window.location.href = "/profilepage";
+      // history.push("");
     } catch (error) {
       console.error("Error adding book:", error);
     }
