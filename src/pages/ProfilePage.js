@@ -21,7 +21,9 @@ function ProfilePage() {
   useEffect((userId) => {
     const fetchBoughtBooks = async () => {
       try {
-        const response = await axios.get(`/shoppingCart/allBought/${userId}`);
+        const response = await axios.get(
+          `http://localhost:3001/shoppingCart/allBought/${userId}`
+        );
         setBoughtBooks(response.data);
       } catch (error) {
         console.error("Error fetching books:", error);
@@ -36,7 +38,9 @@ function ProfilePage() {
   useEffect((userId) => {
     const fetchFavoriteBooks = async () => {
       try {
-        const response = await axios.get(`/books/favoriteBooks/${userId}`);
+        const response = await axios.get(
+          `http://localhost:3001/books/favoriteBooks/${userId}`
+        );
         setFavoriteBooks(response.data);
       } catch (error) {
         console.error("Error fetching books:", error);
@@ -51,7 +55,9 @@ function ProfilePage() {
   useEffect((userId) => {
     const fetchAddedbooks = async () => {
       try {
-        const response = await axios.get(`/users/addedbooks/${userId}`);
+        const response = await axios.get(
+          `http://localhost:3001/users/addedbooks/${userId}`
+        );
         setAddedbooks(response.data);
       } catch (error) {
         console.error("Error fetching books:", error);
@@ -63,7 +69,7 @@ function ProfilePage() {
   const handleDeleteBook = (userId, bookId) => {
     // Send a DELETE request to delete the book with the specified id
     axios
-      .delete(`/books/delete/${userId}/${bookId}`)
+      .delete(`http://localhost:3001/books/delete/${userId}/${bookId}`)
       .then((response) => {
         // If deletion is successful, update the books state to remove the deleted book
         setAddedbooks((prevBooks) =>

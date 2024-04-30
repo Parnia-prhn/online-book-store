@@ -16,7 +16,9 @@ function HomePage() {
   useEffect(() => {
     const fetchMostSoldBooks = async () => {
       try {
-        const response = await axios.get("/shoppingCart/mostSold");
+        const response = await axios.get(
+          "http://localhost:3001/shoppingCart/mostSold"
+        );
         setMostSoldBooks(response.data);
       } catch (error) {
         console.error("Error fetching books:", error);
@@ -28,10 +30,12 @@ function HomePage() {
 
   const [recommendedBooks, setRecommendedBooks] = useState([]);
 
-  useEffect(() => {
+  useEffect((userId) => {
     const fetchRecommendedBooks = async () => {
       try {
-        const response = await axios.get("/books/favoriteGenre/:userId");
+        const response = await axios.get(
+          `http://localhost:3001/books/favoriteGenre/${userId}`
+        );
         setRecommendedBooks(response.data);
       } catch (error) {
         console.error("Error fetching books:", error);
@@ -40,9 +44,25 @@ function HomePage() {
     fetchRecommendedBooks();
     return () => {};
   }, []);
+  const [BooksOfGenre, setBooksOfGenre] = useState([]);
+  useEffect((genre) => {
+    const fetchBooksOfGenre = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:3001/books/genre/${genre}`
+        );
+        setBooksOfGenre(response.data);
+      } catch (error) {
+        console.error("Error fetching books:", error);
+      }
+    };
+    fetchBooksOfGenre();
+    return () => {};
+  }, []);
+
   function GenreLink({ genre }) {
     return (
-      <Link to={`/booklistpage/${genre}`}>
+      <Link to={"/booklistpage"}>
         <li className="bg-black p-7 rounded-full w-40 border-8 border-white text-yellow-500 font-yekan text-lg">
           {genre}
         </li>

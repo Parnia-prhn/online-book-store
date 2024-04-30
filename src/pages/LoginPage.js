@@ -27,13 +27,19 @@ function LoginPage() {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/login", credentials);
+      const response = await axios.post(
+        "http://localhost:3001/login",
+        credentials
+      );
       const token = response.data.token;
+      const userId = response.data.user.userId;
       localStorage.setItem("token", token);
+      localStorage.setItem("username", credentials.username);
+      localStorage.setItem("userId", userId);
       console.log("Login successful");
       window.location.href = "/profilepage";
-      // history.push("");
     } catch (error) {
+      // console.log("hhhhh");
       console.error("Login failed:", error.response.data.message);
       setError("Invalid username or password");
     }

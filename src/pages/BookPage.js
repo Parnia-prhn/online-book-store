@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import { Outlet, Link } from "react-router-dom";
-
+import axios from "axios";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import IconButton from "@mui/material/IconButton";
@@ -24,6 +24,34 @@ function BookPage() {
     { id: 3, image: book3, name: "نام کتاب 3", price: "قیمت کتاب 3" },
     { id: 4, image: book4, name: "نام کتاب 4", price: "قیمت کتاب 4" },
   ];
+  const [bookToBuy, setBookToBuy] = useState({
+    bookId: "",
+    quantity: "",
+  });
+  const handleButtonClickBuyBook = (userId) => {
+    axios
+      .post(`http://localhost:3001/shoppingCart/addToCart/${userId}`, bookToBuy)
+      .then((response) => {
+        // Handle successful response
+        console.log(response.data);
+      })
+      .catch((error) => {
+        // Handle error
+        console.error("Error:", error);
+      });
+  };
+  const handleButtonClickFavoriteBook = (userId, bookId) => {
+    axios
+      .post(`http://localhost:3001/users/addFavoriteBooks/${userId}/${bookId}`)
+      .then((response) => {
+        // Handle successful response
+        console.log(response.data);
+      })
+      .catch((error) => {
+        // Handle error
+        console.error("Error:", error);
+      });
+  };
   return (
     <div>
       <HeaderBookPage />
@@ -46,6 +74,7 @@ function BookPage() {
             aria-label="sign-up"
             size="small"
             variant="contained"
+            onClick={handleButtonClickBuyBook}
             //color="success"
             sx={{
               color: "#fdd400",
@@ -64,6 +93,7 @@ function BookPage() {
         <li>
           <IconButton
             className=" "
+            onClick={handleButtonClickFavoriteBook}
             sx={{
               bgcolor: "black",
               margin: "5px",
