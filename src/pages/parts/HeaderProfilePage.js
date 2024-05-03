@@ -21,8 +21,9 @@ import { CgProfile } from "react-icons/cg";
 
 function HeaderProfilePage() {
   const handleButtonClickCart = (userId) => {
+    userId = localStorage.getItem("userId");
     axios
-      .post(`http://localhost:3001/shoppingCart/cart/${userId}`)
+      .get(`http://localhost:3001/shoppingCart/cart/${userId}`)
       .then((response) => {
         // Handle successful response
         console.log(response.data);
@@ -33,8 +34,9 @@ function HeaderProfilePage() {
       });
   };
   const handleButtonClickFavoriteBooks = (userId) => {
+    userId = localStorage.getItem("userId");
     axios
-      .post(`http://localhost:3001/books/favoriteBooks/${userId}`)
+      .get(`http://localhost:3001/books/favoriteBooks/${userId}`)
       .then((response) => {
         // Handle successful response
         console.log(response.data);
@@ -64,7 +66,7 @@ function HeaderProfilePage() {
             <AccountCircleIcon className="" />
           </IconButton>
         </Link>
-        <Link to="/booklistpage">
+        <Link to="/booklistpage?option=favorite-books">
           <IconButton
             className=""
             onClick={handleButtonClickFavoriteBooks}
@@ -81,7 +83,7 @@ function HeaderProfilePage() {
             <FavoriteIcon className="" />
           </IconButton>
         </Link>
-        <Link to="/booklistpage">
+        <Link to="/booklistpage?option=cart">
           <IconButton
             className=""
             onClick={handleButtonClickCart}

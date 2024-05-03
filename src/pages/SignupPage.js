@@ -16,7 +16,7 @@ function SignupPage() {
     password: "",
     age: "",
     gender: "",
-    genre: "",
+    favoriteGenre: "",
   });
   const [error, setError] = useState("");
   // const history = useHistory();
@@ -49,10 +49,12 @@ function SignupPage() {
                 <ul className="space-x-5 flex justify-center text-center ">
                   <li>
                     <TextField
+                      id="username"
+                      name="username"
                       label="username"
                       variant="outlined"
                       size="small"
-                      value={formData.username}
+                      // value={formData.username}
                       onChange={handleInputChange}
                       className=" flex "
                       sx={{ m: 1, width: 180, backgroundColor: "white" }}
@@ -65,10 +67,12 @@ function SignupPage() {
                 <ul className="space-x-5 flex justify-center text-center ">
                   <li>
                     <TextField
+                      id="password"
+                      name="password"
                       label="password"
                       variant="outlined"
                       size="small"
-                      value={formData.password}
+                      // value={formData.password}
                       onChange={handleInputChange}
                       className=" flex "
                       sx={{ m: 1, width: 180, backgroundColor: "white" }}
@@ -81,10 +85,12 @@ function SignupPage() {
                 <ul className="space-x-5 flex justify-center text-center ">
                   <li>
                     <TextField
+                      id="age"
+                      name="age"
                       label="age"
                       variant="outlined"
                       size="small"
-                      value={formData.age}
+                      // value={formData.age}
                       onChange={handleInputChange}
                       className=" flex "
                       sx={{ m: 1, width: 180, backgroundColor: "white" }}
@@ -97,10 +103,12 @@ function SignupPage() {
                 <ul className="space-x-5 flex justify-center text-center ">
                   <li>
                     <TextField
+                      id="gender"
+                      name="gender"
                       label="gender"
                       variant="outlined"
                       size="small"
-                      value={formData.gender}
+                      // value={formData.gender}
                       onChange={handleInputChange}
                       className=" flex "
                       sx={{ m: 1, width: 180, backgroundColor: "white" }}
@@ -113,10 +121,12 @@ function SignupPage() {
                 <ul className="space-x-5 flex justify-center text-center ">
                   <li>
                     <TextField
-                      label="genre"
+                      id="favoriteGenre"
+                      name="favoriteGenre"
+                      label="favoriteGenre"
                       variant="outlined"
                       size="small"
-                      value={formData.genre}
+                      // value={formData.genre}
                       onChange={handleInputChange}
                       className=" flex "
                       sx={{ m: 1, width: 180, backgroundColor: "white" }}

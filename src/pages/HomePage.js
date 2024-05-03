@@ -11,6 +11,21 @@ import Header from "./parts/HeaderHomePage.js";
 import Footer from "./parts/Footer.js";
 
 function HomePage() {
+  const [books, setBooks] = useState([]);
+
+  useEffect(() => {
+    const fetchBooks = async () => {
+      try {
+        const response = await axios.get("http://localhost:3001/books");
+        setBooks(response.data);
+      } catch (error) {
+        console.error("Error fetching books:", error);
+      }
+    };
+    fetchBooks();
+    return () => {};
+  }, []);
+
   const [mostSoldBooks, setMostSoldBooks] = useState([]);
 
   useEffect(() => {
@@ -31,6 +46,7 @@ function HomePage() {
   const [recommendedBooks, setRecommendedBooks] = useState([]);
 
   useEffect((userId) => {
+    userId = localStorage.getItem("userId");
     const fetchRecommendedBooks = async () => {
       try {
         const response = await axios.get(
@@ -62,7 +78,7 @@ function HomePage() {
 
   function GenreLink({ genre }) {
     return (
-      <Link to={"/booklistpage"}>
+      <Link to={`/booklistpage?option=genre-${genre}`}>
         <li className="bg-black p-7 rounded-full w-40 border-8 border-white text-yellow-500 font-yekan text-lg">
           {genre}
         </li>
@@ -73,7 +89,7 @@ function HomePage() {
     <div className="home-page">
       <Header />
 
-      <Link to="/booklistpage">
+      <Link to="/booklistpage?option=most-sold">
         <div className="text-right text-black p-7 mt-8 mb-5 font-yekan text-lg">
           پر فروشترین ها
         </div>
@@ -81,11 +97,11 @@ function HomePage() {
 
       <ul className="space-x-12 flex justify-end p-5">
         {mostSoldBooks.map((book) => (
-          <Link to="/bookpage" key={book.id}>
+          <Link to={`/bookpage?bookId=${book._id}`} key={book.id}>
             <li>
               <img
                 src={book.image}
-                alt={`book${book.id}`}
+                alt={`book${book._id}`}
                 className="w-1/2 mb-3"
               />
               <div className="font-yekan text-base mb-3 ">{book.title}</div>
@@ -102,10 +118,10 @@ function HomePage() {
       <div className="bg-yellow-500 p-10 rounded ">
         <ul className="space-x-16 flex justify-center text-center">
           <li>
-            <GenreLink genre="زندگینامه" />
+            <GenreLink genre="fantasy" />
           </li>
           <li>
-            <GenreLink genre="شعر" />
+            <GenreLink genre="romantic" />
           </li>
           <li>
             <GenreLink genre="ادبیات جهان" />
@@ -115,14 +131,14 @@ function HomePage() {
           </li>
         </ul>
       </div>
-      <Link to="/booklistpage">
+      <Link to="/booklistpage?option=recomended-books">
         <div className="text-right text-black p-7 mt-7 mb-5 font-yekan text-lg">
           پیشنهادی برای شما
         </div>
       </Link>
       <ul className="space-x-12 flex justify-end p-5">
         {recommendedBooks.map((book) => (
-          <Link to="/bookpage" key={book.id}>
+          <Link to={`/bookpage?bookId=${book._id}`} key={book.id}>
             <li>
               <img
                 src={book.image}

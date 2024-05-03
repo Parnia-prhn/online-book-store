@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useLocation } from "react-router-dom";
 
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
@@ -15,15 +15,58 @@ import book3 from "../assets/images/book3.jpg";
 import book4 from "../assets/images/book4.jpg";
 
 function BookListPage() {
+  const userId = localStorage.getItem("userId");
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const option = searchParams.get("option");
   const [books, setBooks] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchBooks = async () => {
+    const fetchBooks = async (option, genre) => {
+      option = searchParams.get("option");
       try {
-        const response = await axios.get("http://localhost:3000/books");
+        setLoading(true);
+        let response;
+        if (option === "all-books") {
+          response = await axios.get("http://localhost:3001/books");
+        } else if (option === "most-sold") {
+          response = await axios.get(
+            "http://localhost:3001/shoppingCart/mostSold"
+          );
+        } else if (option === "recomended-books") {
+          response = await axios.get(
+            `http://localhost:3001/books/favoriteGenre/${userId}`
+          );
+        } else if (option === `genre-${genre}`) {
+          response = await axios.get(
+            `http://localhost:3001/books/genre/${genre}`
+          );
+        } else if (option === "bought-books") {
+          response = await axios.get(
+            `http://localhost:3001/shoppingCart/allBought/${userId}`
+          );
+        } else if (option === "favorite-books") {
+          response = await axios.get(
+            `http://localhost:3001/books/favoriteBooks/${userId}`
+          );
+        } else if (option === "added-books") {
+          response = await axios.get(
+            `http://localhost:3001/users/addedbooks/${userId}`
+          );
+        } else if (option === "cart") {
+          response = await axios.get(
+            `http://localhost:3001/shoppingCart/cart/${userId}`
+          );
+        } else {
+          response = await axios.get("http://localhost:3001/books");
+        }
+
         setBooks(response.data);
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching books:", error);
+        setLoading(false);
       }
     };
     fetchBooks();
@@ -37,7 +80,7 @@ function BookListPage() {
         <li>
           <ul className="space-x-12 flex justify-end p-5">
             {books.map((book) => (
-              <Link to="/bookpage" key={book.id}>
+              <Link to={`/bookpage?bookId=${book._id}`} key={book.id}>
                 <li>
                   <img
                     src={book.image}
@@ -52,7 +95,7 @@ function BookListPage() {
           </ul>
         </li>
         <li>
-          <ul className="space-x-12 flex justify-end p-5">
+          {/* <ul className="space-x-12 flex justify-end p-5">
             {books.map((book) => (
               <Link to="/bookpage" key={book.id}>
                 <li>
@@ -66,7 +109,7 @@ function BookListPage() {
                 </li>
               </Link>
             ))}
-          </ul>
+          </ul> */}
         </li>
       </ul>
     </div>

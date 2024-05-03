@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { Outlet, Link } from "react-router-dom";
 import axios from "axios";
@@ -18,17 +18,34 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 function BookPage() {
-  const books = [
-    { id: 1, image: book1, name: "نام کتاب 1", price: "قیمت کتاب 1" },
-    { id: 2, image: book2, name: "نام کتاب 2", price: "قیمت کتاب 2" },
-    { id: 3, image: book3, name: "نام کتاب 3", price: "قیمت کتاب 3" },
-    { id: 4, image: book4, name: "نام کتاب 4", price: "قیمت کتاب 4" },
-  ];
+  // const books = [
+  //   { id: 1, image: book1, name: "نام کتاب 1", price: "قیمت کتاب 1" },
+  //   { id: 2, image: book2, name: "نام کتاب 2", price: "قیمت کتاب 2" },
+  //   { id: 3, image: book3, name: "نام کتاب 3", price: "قیمت کتاب 3" },
+  //   { id: 4, image: book4, name: "نام کتاب 4", price: "قیمت کتاب 4" },
+  // ];
+  const [book, setBook] = useState([]);
+
+  useEffect(() => {
+    const fetchBook = async (bookId) => {
+      try {
+        const response = await axios.get(
+          `http://localhost:3001/books/${bookId}`
+        );
+        setBook(response.data);
+      } catch (error) {
+        console.error("Error fetching books:", error);
+      }
+    };
+    fetchBook();
+    return () => {};
+  }, []);
   const [bookToBuy, setBookToBuy] = useState({
     bookId: "",
     quantity: "",
   });
   const handleButtonClickBuyBook = (userId) => {
+    userId = localStorage.getItem("userId");
     axios
       .post(`http://localhost:3001/shoppingCart/addToCart/${userId}`, bookToBuy)
       .then((response) => {
@@ -41,6 +58,7 @@ function BookPage() {
       });
   };
   const handleButtonClickFavoriteBook = (userId, bookId) => {
+    userId = localStorage.getItem("userId");
     axios
       .post(`http://localhost:3001/users/addFavoriteBooks/${userId}/${bookId}`)
       .then((response) => {
@@ -59,12 +77,12 @@ function BookPage() {
       <ul className="space-x-8 flex justify-end mt-7 mb-7">
         <li className="p-10 font-yekan text-lg">
           <div className="mb-7 font-yekan text-lg">
-            <b>کتابخانه نیمه شب</b>
+            <b>book.title</b>
           </div>
-          داستانی راجب حسرت ها
+          <div>book.author book.publisher book.price</div>
         </li>
         <li>
-          <img src={book3} alt="book4" className="flex w-1/2 p-6" />
+          <img src={book.image} alt="book4" className="flex w-1/2 p-6" />
         </li>
       </ul>
       <ul className="flex justify-start p-10">

@@ -32,7 +32,7 @@ function LoginPage() {
         credentials
       );
       const token = response.data.token;
-      const userId = response.data.user.userId;
+      const userId = response.data.user._id;
       localStorage.setItem("token", token);
       localStorage.setItem("username", credentials.username);
       localStorage.setItem("userId", userId);

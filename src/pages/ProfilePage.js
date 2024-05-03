@@ -19,6 +19,7 @@ function ProfilePage() {
   const [boughtBooks, setBoughtBooks] = useState([]);
 
   useEffect((userId) => {
+    userId = localStorage.getItem("userId");
     const fetchBoughtBooks = async () => {
       try {
         const response = await axios.get(
@@ -36,6 +37,7 @@ function ProfilePage() {
   const [favoriteBooks, setFavoriteBooks] = useState([]);
 
   useEffect((userId) => {
+    userId = localStorage.getItem("userId");
     const fetchFavoriteBooks = async () => {
       try {
         const response = await axios.get(
@@ -53,6 +55,7 @@ function ProfilePage() {
   const [addedbooks, setAddedbooks] = useState([]);
 
   useEffect((userId) => {
+    userId = localStorage.getItem("userId");
     const fetchAddedbooks = async () => {
       try {
         const response = await axios.get(
@@ -67,13 +70,14 @@ function ProfilePage() {
     return () => {};
   }, []);
   const handleDeleteBook = (userId, bookId) => {
+    userId = localStorage.getItem("userId");
     // Send a DELETE request to delete the book with the specified id
     axios
       .delete(`http://localhost:3001/books/delete/${userId}/${bookId}`)
       .then((response) => {
         // If deletion is successful, update the books state to remove the deleted book
         setAddedbooks((prevBooks) =>
-          prevBooks.filter((book) => book.id !== bookId)
+          prevBooks.filter((book) => book._id !== bookId)
         );
       })
       .catch((error) => {
@@ -90,11 +94,11 @@ function ProfilePage() {
       </div>
 
       <div className="text-right text-black p-7 font-yekan text-lg">
-        کتاب های خریداری شده
+        <Link to="/booklistpage?option=bought-books">کتاب های خریداری شده</Link>
       </div>
       <ul className="space-x-12 flex justify-end p-5">
         {boughtBooks.map((book) => (
-          <Link to="/bookpage" key={book.id}>
+          <Link to={`/bookpage?bookId=${book._id}`} key={book.id}>
             <li>
               <img
                 src={book.image}
@@ -109,11 +113,13 @@ function ProfilePage() {
       </ul>
 
       <div className="text-right text-black p-7 font-yekan text-lg">
-        کتاب های پسندیده شده
+        <Link to="/booklistpage?option=favorite-books">
+          کتاب های پسندیده شده
+        </Link>
       </div>
       <ul className="space-x-12 flex justify-end p-5">
         {favoriteBooks.map((book) => (
-          <Link to="/bookpage" key={book.id}>
+          <Link to={`/bookpage?bookId=${book._id}`} key={book.id}>
             <li>
               <img
                 src={book.image}
@@ -127,12 +133,12 @@ function ProfilePage() {
         ))}
       </ul>
       <div className="text-right text-black p-7 font-yekan text-lg">
-        کتاب های من
+        <Link to="/booklistpage?option=added-books">کتاب های من</Link>
       </div>
       <ul className="space-x-12 flex justify-self-end ml-5 mb-7">
         {addedbooks.map((book) => (
           <li key={book.id}>
-            <Link to="/bookpage">
+            <Link to={`/bookpage?bookId=${book._id}`}>
               <img
                 src={book.image}
                 alt={`book${book.id}`}
@@ -140,7 +146,7 @@ function ProfilePage() {
               />
             </Link>
             <ul className="space-x-0 flex flex-row mb-3">
-              <Link to={`/editbookpage/${book.userIdCreator}/${book.id}`}>
+              <Link to={`/addbookpage?option=edit-book-${book._id}`}>
                 <li>
                   <MdEdit className="bg-black text-yellow-500 rounded-full mr-2" />
                 </li>
@@ -148,7 +154,7 @@ function ProfilePage() {
               <li>
                 <MdDelete
                   className="bg-black text-yellow-500 rounded-full"
-                  onClick={() => handleDeleteBook(book.userIdCreator, book.id)}
+                  onClick={() => handleDeleteBook(book.userIdCreator, book._id)}
                 />
               </li>
             </ul>

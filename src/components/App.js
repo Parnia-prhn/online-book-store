@@ -22,6 +22,7 @@ function App() {
         <Route path="/bookpage" element={<BookPage />} />
         <Route path="/loginpage" element={<LoginPage />} />
         <Route path="/signuppage" element={<SignupPage />} />
+        <Route path="/editbookpage" element={<AddBookPage />} />
       </Routes>
     </div>
   );
