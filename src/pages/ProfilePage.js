@@ -146,7 +146,7 @@ function ProfilePage() {
               />
             </Link>
             <ul className="space-x-0 flex flex-row mb-3">
-              <Link to={`/addbookpage?option=edit-book-${book._id}`}>
+              <Link to={`/addbookpage?option=${book._id}`}>
                 <li>
                   <MdEdit className="bg-black text-yellow-500 rounded-full mr-2" />
                 </li>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useLocation } from "react-router-dom";
 import axios from "axios";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
@@ -25,9 +25,13 @@ function BookPage() {
   //   { id: 4, image: book4, name: "نام کتاب 4", price: "قیمت کتاب 4" },
   // ];
   const [book, setBook] = useState([]);
-
+  const location = useLocation();
   useEffect(() => {
     const fetchBook = async (bookId) => {
+      const params = new URLSearchParams(location.search);
+      console.log(params);
+      bookId = params.get("bookId");
+
       try {
         const response = await axios.get(
           `http://localhost:3001/books/${bookId}`
@@ -44,10 +48,16 @@ function BookPage() {
     bookId: "",
     quantity: "",
   });
-  const handleButtonClickBuyBook = (userId) => {
+  const handleButtonClickBuyBook = (userId, bookId) => {
     userId = localStorage.getItem("userId");
+    const params = new URLSearchParams(location.search);
+    console.log(params);
+    bookId = params.get("bookId");
     axios
-      .post(`http://localhost:3001/shoppingCart/addToCart/${userId}`, bookToBuy)
+      .post(
+        `http://localhost:3001/shoppingCart/addToCart/${userId}/${bookId}`,
+        bookToBuy
+      )
       .then((response) => {
         // Handle successful response
         console.log(response.data);
@@ -59,6 +69,9 @@ function BookPage() {
   };
   const handleButtonClickFavoriteBook = (userId, bookId) => {
     userId = localStorage.getItem("userId");
+    const params = new URLSearchParams(location.search);
+    console.log(params);
+    bookId = params.get("bookId");
     axios
       .post(`http://localhost:3001/users/addFavoriteBooks/${userId}/${bookId}`)
       .then((response) => {
@@ -77,9 +90,13 @@ function BookPage() {
       <ul className="space-x-8 flex justify-end mt-7 mb-7">
         <li className="p-10 font-yekan text-lg">
           <div className="mb-7 font-yekan text-lg">
-            <b>book.title</b>
+            <b>{book.title}</b>
           </div>
-          <div>book.author book.publisher book.price</div>
+          <div>{book.author}</div>
+
+          <div>{book.publisher}</div>
+
+          <div>{book.price}</div>
         </li>
         <li>
           <img src={book.image} alt="book4" className="flex w-1/2 p-6" />

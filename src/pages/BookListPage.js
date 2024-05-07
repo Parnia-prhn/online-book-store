@@ -25,6 +25,7 @@ function BookListPage() {
   useEffect(() => {
     const fetchBooks = async (option, genre) => {
       option = searchParams.get("option");
+      genre = searchParams.get("option2");
       try {
         setLoading(true);
         let response;
@@ -38,7 +39,7 @@ function BookListPage() {
           response = await axios.get(
             `http://localhost:3001/books/favoriteGenre/${userId}`
           );
-        } else if (option === `genre-${genre}`) {
+        } else if (option === "genre" && genre === `${genre}`) {
           response = await axios.get(
             `http://localhost:3001/books/genre/${genre}`
           );

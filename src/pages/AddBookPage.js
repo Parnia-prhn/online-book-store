@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { Outlet, Link, useLocation } from "react-router-dom";
 import axios from "axios";
@@ -11,6 +11,7 @@ function AddBookPage() {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const option = searchParams.get("option");
+  const bookId = new URLSearchParams(location.search).get("option");
   const [loading, setLoading] = useState(true);
   const [bookData, setBookData] = useState({
     title: "",
@@ -18,8 +19,10 @@ function AddBookPage() {
     genre: "",
     publisher: "",
     price: "",
-    image: "",
   });
+  const [file, setFile] = useState(null);
+  const [fileUrl, setFileUrl] = useState("");
+
   // const history = useHistory();
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -28,47 +31,66 @@ function AddBookPage() {
       [name]: value,
     }));
   };
+  const handleFileChange = (e) => {
+    setFile(e.target.files[0]);
+  };
+
+  const uploadFile = async () => {
+    try {
+      const formData = new FormData();
+      formData.append("image", file);
+
+      const response = await axios.post(
+        "https://file.io/?expires=1w",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      if (response.data.success) {
+        // Set the file URL in state
+        setFileUrl(response.data.data.url);
+      } else {
+        console.error("Failed to upload file:", response.data);
+      }
+    } catch (error) {
+      console.error("Error uploading file:", error);
+    }
+  };
 
   const handleSubmit = async (e, userId, bookId, option) => {
+    bookId = new URLSearchParams(location.search).get("option");
     option = searchParams.get("option");
     userId = localStorage.getItem("userId");
+
     e.preventDefault();
+    setLoading(true);
+    await uploadFile();
     try {
-      setLoading(true);
       let response;
-      if (option === `edit-book-${bookId}`) {
+      if (option === `${bookId}`) {
         response = axios.put(
           `http://localhost:3001/books/update/${userId}/${bookId}`,
-          bookData
+          { ...bookData, image: fileUrl }
         );
-        console.log("Book updated successfully:", response.data);
+        console.alert("Book updated successfully");
       } else {
         response = await axios.post(
-          `http://localhost:3001/books/create/${userId}`, // Replace userId with actual user id
-          bookData
+          `http://localhost:3001/books/create/${userId}`,
+          { ...bookData, image: fileUrl }
         );
         console.log("Book added successfully:", response.data);
         const bookId = response.data.savedBook._id;
         localStorage.setItem("bookId", bookId);
       }
-      window.location.href = "/profilepage";
+      // window.location.href = "/profilepage";
+
       setLoading(false);
-      // history.push("");
     } catch (error) {
       console.error("Error adding/updating book:", error);
     }
-  };
-
-  const [fileAddress, setFileAddress] = useState("");
-
-  const handleFileUpload = (event) => {
-    const file = event.target.files[0];
-    // Handle file upload logic here
-    console.log("Uploaded file:", file);
-
-    // Save the file address
-    setFileAddress(URL.createObjectURL(file));
-    handleInputChange(event);
   };
 
   return (
@@ -171,17 +193,6 @@ function AddBookPage() {
               <li>
                 <ul className="space-x-5 flex justify-center text-center ">
                   <li>
-                    {/* <TextField
-                      id="price"
-                      name="price"
-                      label="price"
-                      variant="outlined"
-                      size="small"
-                      // value={bookData.price}
-                      onChange={handleInputChange}
-                      className="bg-white flex"
-                      sx={{ m: 1, width: 180, backgroundColor: "white" }}
-                    /> */}
                     <input
                       id="image"
                       name="image"
@@ -190,14 +201,13 @@ function AddBookPage() {
                       size="small"
                       type="file"
                       accept=".jpg, .jpeg, .png, .pdf"
-                      onChange={handleFileUpload}
+                      onChange={handleFileChange}
                       className="text-yellow-500 bg-black rounded-md "
                     />
-                    {fileAddress && (
+                    {fileUrl && (
                       <div>
-                        <p>Uploaded file address: {fileAddress}</p>
-                        {/* You can use the fileAddress here as needed */}
-                        {/* <img src={fileAddress} alt="Uploaded" /> */}
+                        <p>Uploaded Image:</p>
+                        <img src={fileUrl} alt="Uploaded" />
                       </div>
                     )}
                   </li>
@@ -230,4 +240,5 @@ function AddBookPage() {
     </div>
   );
 }
+
 export default AddBookPage;
